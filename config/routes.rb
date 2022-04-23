@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :events
 
   # Defines the root path route ("/")
-  root 'event#new'
+  root "events#new"
 end
