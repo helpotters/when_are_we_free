@@ -23,9 +23,3 @@ end)
 Capybara.add_selector(:test_id) do
   css { |value| "[data-test-id='#{value}']" }
 end
-
-Capybara.add_selector(:test_project_submission) do
-  xpath do |num|
-    ".//div[@data-test-id='submission-item'][#{num}]"
-  end
-end
