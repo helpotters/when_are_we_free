@@ -1,0 +1,14 @@
+require "rails_helper"
+
+RSpec.describe Event, type: :model do
+  subject(:event) { create(:event) }
+
+  it { is_expected.to validate_length_of(:title).is_at_least(2).is_at_most(100) }
+  it { is_expected.to validate_length_of(:description).is_at_least(2).is_at_most(100) }
+
+  it { is_expected.to validate_presence_of(:start_date) }
+  it { is_expected.to validate_presence_of(:end_date) }
+  it { is_expected.to allow_value(Date.today).for(:start_date) }
+  it { is_expected.to allow_value(Date.today + 1).for(:end_date) }
+  it { is_expected.to allow_value(Date.today.strftime("%F").to_s).for(:end_date) }
+end
