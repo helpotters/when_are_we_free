@@ -73,3 +73,5 @@ gem "factory_bot_rails", "~> 6.2", :groups => [:development, :test]
 gem "faker", "~> 2.20"
 
 gem "shoulda-matchers", "~> 5.1"
+
+gem "rspec_junit_formatter", "~> 0.5.1", :group => :test
