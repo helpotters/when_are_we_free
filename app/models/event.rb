@@ -4,11 +4,11 @@ class Event < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
 
-  before_validation :clean_user_inputs, only: %i[title description]
+  before_validation :clean_inputs, only: %i[title description]
 
   private
 
-  def clean_user_inputs
+  def clean_inputs
     self.title = title.delete("\000") unless title.nil?
     self.description = description.delete("\000") unless description.nil?
   end
