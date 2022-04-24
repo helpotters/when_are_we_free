@@ -1,24 +1,30 @@
-# README
+# When Are We Free is a simple scheduling application for coordinating free days in a friend group.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://helpotters.semaphoreci.com/badges/when_are_we_free.svg?style=shields
 
-Things you may want to cover:
+Ruby v.3.0.2
 
-* Ruby version
+## Who is this for?
+The goal here is create a simple interface that allows for event creation and voting in seconds.
 
-* System dependencies
+Some people don't want to coordinate every combination of free days to determine the perfect overlap between everyone. 
+Some people don't want to create complicated polls where users have to add their timeslots for each day. 
 
-* Configuration
+Sometimes we just want a simple and quick answer to *'When are we all free?'*
 
-* Database creation
+Make those social events happen. Don't let logistics get in the way of seeing the people you like spending time with.
 
-* Database initialization
+## Features and Design Choices
 
-* How to run the test suite
+The application has limited choices for ease-of-use. Events have an opinionated duration of either till the end of the current week or the end of the current month. 
 
-* Services (job queues, cache servers, search engines, etc.)
+Should any of these events be too short, (ie. 2 days on a week event), it will rollover to the next week/month as well.
+ 
+ 
+ ## Deployment
+ 
+ I set this application up with Semaphore CI and Heroku.
 
-* Deployment instructions
 
-* ...
+
+
