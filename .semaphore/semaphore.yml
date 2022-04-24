@@ -29,6 +29,8 @@ blocks:
         on_pass:
           commands:
             - echo "Setup complete."
+      secrets:
+        - name: heroku-http
   - name: RSpec Testing
     task:
       epilogue:
