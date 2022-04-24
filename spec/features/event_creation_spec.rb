@@ -36,7 +36,7 @@ RSpec.feature 'Event Creation', type: :feature do
     end
   end
 
-  context 'when filled in with empty values' do
+  xcontext 'when filled in with empty values' do
     it 'validates the event fields' do
       find(:test_id, 'title_field').fill_in(with: '')
       find(:test_id, 'description_field').fill_in(with: '')
