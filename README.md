@@ -1,7 +1,6 @@
 # When Are We Free is a simple scheduling application for coordinating free days in a friend group.
 
-https://helpotters.semaphoreci.com/badges/when_are_we_free.svg?style=shields
-
+[![Build Status](https://helpotters.semaphoreci.com/badges/when_are_we_free/branches/master.svg?style=shields&key=9668608a-3e71-4cf9-bf3c-020206a0310a)](https://helpotters.semaphoreci.com/projects/when_are_we_free)
 Ruby v.3.0.2
 
 ## Who is this for?
