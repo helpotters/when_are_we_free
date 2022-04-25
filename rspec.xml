@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="0" skipped="0" failures="0" errors="0" time="0.000302" timestamp="2022-04-24T18:35:17-07:00" hostname="wooloo">
+<testsuite name="rspec" tests="1" skipped="0" failures="1" errors="0" time="0.231043" timestamp="2022-04-24T18:42:55-07:00" hostname="wooloo">
 <properties>
-<property name="seed" value="12268"/>
+<property name="seed" value="57667"/>
 </properties>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event title" file="./spec/features/event_show_spec.rb" time="0.229808"><failure message="expected to find text &quot;\u0013\u{A9F34}IP C\u{73BF8}웢薥\u{88D7A}UV犒\u001E)⍲\u0018턛\u00160JL\u0002⸵\u{7E03A}\u{70664}Q㓟咡 J\u{C883D}&quot; in &quot;\u{A9F34}IP C\u{73BF8}웢薥\u{88D7A}UV犒)⍲턛0JL⸵\u{7E03A}\u{70664}Q㓟咡 J\u{C883D}&quot;" type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: expect(find(:test_id, &apos;event_description&apos;)).to have_content(description.to_s)
+  expected to find text &quot;\u0013\u{A9F34}IP C\u{73BF8}웢薥\u{88D7A}UV犒\u001E)⍲\u0018턛\u00160JL\u0002⸵\u{7E03A}\u{70664}Q㓟咡 J\u{C883D}&quot; in &quot;\u{A9F34}IP C\u{73BF8}웢薥\u{88D7A}UV犒)⍲턛0JL⸵\u{7E03A}\u{70664}Q㓟咡 J\u{C883D}&quot;
+./spec/features/event_show_spec.rb:14:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
 </testsuite>
