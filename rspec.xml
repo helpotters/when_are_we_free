@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="4" skipped="0" failures="2" errors="0" time="0.252420" timestamp="2022-04-24T18:58:08-07:00" hostname="wooloo">
+<testsuite name="rspec" tests="4" skipped="0" failures="0" errors="0" time="0.235599" timestamp="2022-04-24T18:59:49-07:00" hostname="wooloo">
 <properties>
-<property name="seed" value="38613"/>
+<property name="seed" value="44745"/>
 </properties>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event title" file="./spec/features/event_show_spec.rb" time="0.228261"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event description" file="./spec/features/event_show_spec.rb" time="0.008948"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event start date" file="./spec/features/event_show_spec.rb" time="0.007499"><failure message="Unable to find test_id &quot;event_start_date&quot;" type="Capybara::ElementNotFound">Failure/Error: expect(find(:test_id, &apos;event_start_date&apos;)).to have_content(start_date)
-
-Capybara::ElementNotFound:
-  Unable to find test_id &quot;event_start_date&quot;
-./spec/features/event_show_spec.rb:21:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event end date" file="./spec/features/event_show_spec.rb" time="0.006254"><failure message="Unable to find test_id &quot;event_end_date&quot;" type="Capybara::ElementNotFound">Failure/Error: expect(find(:test_id, &apos;event_end_date&apos;)).to have_content(end_date)
-
-Capybara::ElementNotFound:
-  Unable to find test_id &quot;event_end_date&quot;
-./spec/features/event_show_spec.rb:24:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event title" file="./spec/features/event_show_spec.rb" time="0.216128"></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event description" file="./spec/features/event_show_spec.rb" time="0.006141"></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event start date" file="./spec/features/event_show_spec.rb" time="0.006454"></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event end date" file="./spec/features/event_show_spec.rb" time="0.005439"></testcase>
 </testsuite>
