@@ -21,7 +21,7 @@ RSpec.feature 'VotingForms', type: :feature do
   context 'does not fill required fields' do
     it 'fills in name but not calendar' do
       not_available = nil
-      find(:test_id, 'name').fill_in with(nil)
+      find(:test_id, 'name').fill_in with: name
 
       expect(page).to have_content('cannot be empty')
     end
