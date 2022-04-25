@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="4" skipped="0" failures="0" errors="0" time="0.241891" timestamp="2022-04-25T10:35:04-07:00" hostname="wooloo">
+<testsuite name="rspec" tests="2" skipped="1" failures="1" errors="0" time="0.219781" timestamp="2022-04-25T14:12:58-07:00" hostname="penguin">
 <properties>
-<property name="seed" value="26358"/>
+<property name="seed" value="45194"/>
 </properties>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for title in event view" file="./spec/features/event_show_spec.rb" time="0.221054"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for description in event view" file="./spec/features/event_show_spec.rb" time="0.006687"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for start_date in event view" file="./spec/features/event_show_spec.rb" time="0.006153"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for end_date in event view" file="./spec/features/event_show_spec.rb" time="0.006404"></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill required fields fills in name but not calendar" file="./spec/features/voting_form_spec.rb" time="0.207959"><failure message="No route matches [GET] &quot;/voters/new.html.erb&quot;" type="ActionController::RoutingError">Failure/Error: visit &apos;voters/new.html.erb&apos;
+
+ActionController::RoutingError:
+  No route matches [GET] &quot;/voters/new.html.erb&quot;
+./spec/features/voting_form_spec.rb:9:in `block (2 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill required fields fills in name and calendar" file="./spec/features/voting_form_spec.rb" time="0.000059"><skipped/></testcase>
 </testsuite>
