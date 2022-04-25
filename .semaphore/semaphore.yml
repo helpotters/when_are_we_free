@@ -56,7 +56,7 @@ after_pipeline:
     jobs:
       - name: Publish Test Results
         commands:
-          - test-results publish junit.xml
+          - test-results publish rspec.xml
 promotions:
   - name: Promotion 1
     pipeline_file: pipeline_2.yml
