@@ -1,5 +1,5 @@
 version: v1.0
-name: Test MyApp
+name: Test Development Branch
 agent:
   machine:
     type: e1-standard-2
@@ -16,7 +16,7 @@ blocks:
         - name: RAILS_ENV
           value: test
       jobs:
-        - name: Checkout and Start
+        - name: Checkout and Bundle
           commands:
             - checkout
             - sem-service start postgres 11
@@ -34,9 +34,12 @@ blocks:
           commands:
             - echo "Setup complete."
     dependencies: []
-  - name: Test
+  - name: Testing
     task:
       epilogue:
+        always:
+          commands:
+            - test-results publish rspec.xml
         on_pass:
           commands:
             - echo "RSpec test complete."
@@ -56,4 +59,4 @@ after_pipeline:
     jobs:
       - name: Publish Test Results
         commands:
-          - test-results publish rspec.xml
+          - test-results gen-pipeline-report
