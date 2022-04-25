@@ -11,7 +11,9 @@ RSpec.feature 'EventShow', type: :feature do
   context 'View Basic Information' do
     it 'should have event title' do
       expect(find(:test_id, 'event_title')).to have_content(title)
-      expect(find(:test_id, 'event_description')).to have_content(description.to_s)
+    end
+    it 'should have event description' do
+      expect(find(:test_id, 'event_description')).to have_content(description)
     end
   end
 end
