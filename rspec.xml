@@ -1,30 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="15" skipped="3" failures="1" errors="0" time="0.552473" timestamp="2022-04-24T18:48:37-07:00" hostname="wooloo">
+<testsuite name="rspec" tests="4" skipped="0" failures="2" errors="0" time="0.252420" timestamp="2022-04-24T18:58:08-07:00" hostname="wooloo">
 <properties>
-<property name="seed" value="6186"/>
+<property name="seed" value="38613"/>
 </properties>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filling in with valid title and description week event creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.473112"></testcase>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filling in with valid title and description and selecting month event creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.021311"></testcase>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filled in with empty description creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.013845"></testcase>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filled in with empty values validates the event fields" file="./spec/features/event_creation_spec.rb" time="0.000009"><skipped/></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event title" file="./spec/features/event_show_spec.rb" time="0.006650"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event description" file="./spec/features/event_show_spec.rb" time="0.006340"></testcase>
-<testcase classname="spec.helpers.events_helper_spec" name="EventsHelper add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/helpers/events_helper_spec.rb" file="./spec/helpers/events_helper_spec.rb" time="0.000007"><skipped/></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to validate that the length of :title is between 2 and 100" file="./spec/models/event_spec.rb" time="0.004190"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to validate that the length of :description is between 0 and 100" file="./spec/models/event_spec.rb" time="0.006374"><failure message="Expected Event to validate that the length of :description is between 0
-and 100, but this could not be proved.
-  After setting :description to
-  " type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: it { is_expected.to validate_length_of(:description).is_at_least(0).is_at_most(100) }
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event title" file="./spec/features/event_show_spec.rb" time="0.228261"></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event description" file="./spec/features/event_show_spec.rb" time="0.008948"></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event start date" file="./spec/features/event_show_spec.rb" time="0.007499"><failure message="Unable to find test_id &quot;event_start_date&quot;" type="Capybara::ElementNotFound">Failure/Error: expect(find(:test_id, &apos;event_start_date&apos;)).to have_content(start_date)
 
-  Expected Event to validate that the length of :description is between 0
-  and 100, but this could not be proved.
-    After setting :description to
-    
-./spec/models/event_spec.rb:7:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to validate that :start_date cannot be empty/falsy" file="./spec/models/event_spec.rb" time="0.004339"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to validate that :end_date cannot be empty/falsy" file="./spec/models/event_spec.rb" time="0.003706"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to allow :start_date to be ‹Sun, 24 Apr 2022›" file="./spec/models/event_spec.rb" time="0.002418"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to allow :end_date to be ‹Mon, 25 Apr 2022›" file="./spec/models/event_spec.rb" time="0.002251"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to allow :end_date to be ‹&quot;2022-04-24&quot;›" file="./spec/models/event_spec.rb" time="0.002258"></testcase>
-<testcase classname="spec.requests.events_spec" name="Events GET /index add some examples (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/requests/events_spec.rb" file="./spec/requests/events_spec.rb" time="0.000011"><skipped/></testcase>
+Capybara::ElementNotFound:
+  Unable to find test_id &quot;event_start_date&quot;
+./spec/features/event_show_spec.rb:21:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information should have event end date" file="./spec/features/event_show_spec.rb" time="0.006254"><failure message="Unable to find test_id &quot;event_end_date&quot;" type="Capybara::ElementNotFound">Failure/Error: expect(find(:test_id, &apos;event_end_date&apos;)).to have_content(end_date)
+
+Capybara::ElementNotFound:
+  Unable to find test_id &quot;event_end_date&quot;
+./spec/features/event_show_spec.rb:24:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
 </testsuite>
