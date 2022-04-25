@@ -6,7 +6,7 @@ RSpec.feature 'VotingForms', type: :feature do
   let(:name) { Faker::JapaneseMedia::DragonBall.character }
 
   before do
-    visit new_voter_path
+    visit event_url(event.id)
   end
 
   # Can select any day in calendar
