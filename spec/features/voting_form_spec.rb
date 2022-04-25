@@ -6,7 +6,7 @@ RSpec.feature 'VotingForms', type: :feature do
   let(:name) { Faker::JapaneseMedia::DragonBall.character }
 
   before do
-    visit 'voters/new.html.erb'
+    visit new_voter_path
   end
 
   # Can select any day in calendar

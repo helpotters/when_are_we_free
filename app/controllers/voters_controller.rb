@@ -1,4 +1,3 @@
 class VotersController < ApplicationController
-  def new
-  end
+  def new; end
 end

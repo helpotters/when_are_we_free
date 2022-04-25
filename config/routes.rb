@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'voters/new'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :events
+  resources :events, :voters
 
   # Defines the root path route ("/")
-  root "events#new"
+  root 'events#new'
 end
