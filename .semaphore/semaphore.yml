@@ -29,8 +29,6 @@ blocks:
             - 'bundle exec rake db:create db:schema:load'
             - 'bundle exec rails assets:precompile'
             - echo "Completed database setup"
-        - name: ''
-          commands: []
       epilogue:
         on_pass:
           commands:
