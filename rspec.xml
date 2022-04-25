@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="2" skipped="1" failures="1" errors="0" time="1.469514" timestamp="2022-04-25T14:23:52-07:00" hostname="penguin">
+<testsuite name="rspec" tests="2" skipped="1" failures="1" errors="0" time="1.713632" timestamp="2022-04-25T14:35:21-07:00" hostname="penguin">
 <properties>
-<property name="seed" value="11717"/>
+<property name="seed" value="65289"/>
 </properties>
-<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill required fields fills in name but not calendar" file="./spec/features/voting_form_spec.rb" time="1.460804"><failure message="expected to find text &quot;cannot be empty&quot; in &quot;Voters#new&quot;" type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: expect(page).to have_content(&apos;cannot be empty&apos;)
-  expected to find text &quot;cannot be empty&quot; in &quot;Voters#new&quot;
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill required fields fills in name but not calendar" file="./spec/features/voting_form_spec.rb" time="1.703500"><failure message="expected &quot;http://www.example.com/voters/new&quot; to equal &quot;http://www.example.com/events/55&quot;" type="RSpec::Expectations::ExpectationNotMetError">Failure/Error: expect(page).to have_current_path(event_url(event.id))
+  expected &quot;http://www.example.com/voters/new&quot; to equal &quot;http://www.example.com/events/55&quot;
 ./spec/features/voting_form_spec.rb:26:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
-<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill required fields fills in name and calendar" file="./spec/features/voting_form_spec.rb" time="0.000043"><skipped/></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill required fields fills in name and calendar" file="./spec/features/voting_form_spec.rb" time="0.000056"><skipped/></testcase>
 </testsuite>
