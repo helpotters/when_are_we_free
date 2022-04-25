@@ -27,13 +27,17 @@ RSpec.feature 'VotingForms', type: :feature do
       expect(page).to have_content(name)
     end
   end
-  xcontext 'does fill required fields' do
+  context 'does fill required fields' do
     it 'fills in name and calendar' do
-      availability = duration.sample
+      availability =
+        duration.map(&:to_s).sample
 
       find(:test_id, 'name').fill_in with(:name)
-
       fill_forms(availability)
+
+      expect(page).to have_content(name)
+      days = find(:test_id, 'days_submitted')
+      expect(days).to have_content(availability.count)
     end
   end
 end
