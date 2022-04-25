@@ -4,20 +4,4 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
-blocks:
-  - name: Deploy
-    task:
-      jobs:
-        - name: Deploy to Heroku
-          commands:
-            - echo "Executing deployment..."
-            - checkout --use-cache
-            - 'heroku git:remote -a whenarewefree'
-            - 'git push heroku -f $SEMAPHORE_GIT_BRANCH:main'
-      epilogue:
-        on_pass:
-          commands:
-            - echo "Deployment successful."
-        on_fail:
-          commands:
-            - echo "Deployment failed."
+blocks: []
