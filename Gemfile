@@ -75,3 +75,5 @@ gem "faker", "~> 2.20"
 gem "shoulda-matchers", "~> 5.1"
 
 gem "rspec_junit_formatter", "~> 0.5.1", :group => :test
+
+gem "date_validator", "~> 0.12.0"
