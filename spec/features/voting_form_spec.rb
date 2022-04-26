@@ -32,7 +32,7 @@ RSpec.feature 'VotingForms', type: :feature do
       availability =
         duration.map(&:to_s).sample
 
-      find(:test_id, 'name').fill_in with(:name)
+      find(:test_id, 'name').fill_in with: name
       fill_forms(availability)
 
       expect(page).to have_content(name)

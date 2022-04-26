@@ -2,3 +2,5 @@
 <h2 class="title" data-test-id="event_description"><%= @event.description%></h2>
 <h2 class="title" data-test-id="event_start_date"><%= @event.start_date%></h2>
 <h2 class="title" data-test-id="event_end_date"><%= @event.end_date%></h2>
+
+<%= render "voters/form", local: {voter: @voter} %>

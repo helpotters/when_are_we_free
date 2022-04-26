@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="3" skipped="0" failures="0" errors="0" time="1.044261" timestamp="2022-04-25T23:14:23-07:00" hostname="penguin">
+<testsuite name="rspec" tests="2" skipped="0" failures="2" errors="0" time="1.686184" timestamp="2022-04-25T23:29:25-07:00" hostname="penguin">
 <properties>
-<property name="seed" value="55697"/>
+<property name="seed" value="65462"/>
 </properties>
-<testcase classname="spec.models.voter_spec" name="Voter is expected to validate that the length of :name is between 1 and 26" file="./spec/models/voter_spec.rb" time="0.929820"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter is expected to belong to event required: true" file="./spec/models/voter_spec.rb" time="0.041409"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter is expected to have many votes" file="./spec/models/voter_spec.rb" time="0.058559"></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill required fields fills in name but not calendar" file="./spec/features/voting_form_spec.rb" time="1.615218"><failure message="No route matches [POST] &quot;/events/167&quot;" type="ActionController::RoutingError">Failure/Error: find(:test_id, &apos;submit&apos;).click
+
+ActionController::RoutingError:
+  No route matches [POST] &quot;/events/167&quot;
+./spec/features/voting_form_spec.rb:24:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill required fields fills in name and calendar" file="./spec/features/voting_form_spec.rb" time="0.057932"><failure message="`fill_forms` is not available from within an example (e.g. an `it` block) or from constructs that run in the scope of an example (e.g. `before`, `let`, etc). It is only available on an example group (e.g. a `describe` or `context` block)." type="RSpec::Core::ExampleGroup::WrongScopeError">Failure/Error: fill_forms(availability)
+  `fill_forms` is not available from within an example (e.g. an `it` block) or from constructs that run in the scope of an example (e.g. `before`, `let`, etc). It is only available on an example group (e.g. a `describe` or `context` block).
+./spec/features/voting_form_spec.rb:36:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
 </testsuite>
