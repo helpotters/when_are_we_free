@@ -10,11 +10,18 @@ RSpec.feature 'VotingForms', type: :feature do
   end
 
   # Can select any day in calendar
-  def self.fill_forms(availability)
+  def self.fill_forms
     it 'select days in calendar' do
+      availbility = duration.map(&:to_s).sample
+      find(:test_id, 'name').fill_in with: name
+
       page.all(:test_id, 'day').each do |day|
         day.click if availability.include?(day.value)
       end
+
+      expect(days).to have_content(availability.count)
+      expect(page).to have_content(name)
+      days = find(:test_id, 'days_submitted')
     end
   end
 
@@ -28,16 +35,6 @@ RSpec.feature 'VotingForms', type: :feature do
     end
   end
   context 'does fill required fields' do
-    it 'fills in name and calendar' do
-      availability =
-        duration.map(&:to_s).sample
-
-      find(:test_id, 'name').fill_in with: name
-      fill_forms(availability)
-
-      expect(page).to have_content(name)
-      days = find(:test_id, 'days_submitted')
-      expect(days).to have_content(availability.count)
-    end
+    fill_forms
   end
 end
