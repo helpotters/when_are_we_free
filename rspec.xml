@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="2" skipped="0" failures="2" errors="0" time="0.232010" timestamp="2022-04-27T14:32:41-07:00" hostname="wooloo">
+<testsuite name="rspec" tests="2" skipped="0" failures="2" errors="0" time="0.237528" timestamp="2022-04-27T14:33:42-07:00" hostname="wooloo">
 <properties>
-<property name="seed" value="10085"/>
+<property name="seed" value="54143"/>
 </properties>
-<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill required fields fills in name but not calendar" file="./spec/features/voting_form_spec.rb" time="0.223574"><failure message="No route matches [POST] &quot;/events/43&quot;" type="ActionController::RoutingError">Failure/Error: find(:test_id, &apos;submit&apos;).click
-
-ActionController::RoutingError:
-  No route matches [POST] &quot;/events/43&quot;
-./spec/features/voting_form_spec.rb:14:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
-<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill required fields should fill in each correct date from availability" file="./spec/features/voting_form_spec.rb" time="0.007134"><failure message="Unable to find test_id &quot;days_submitted&quot;" type="Capybara::ElementNotFound">Failure/Error: days = find(:test_id, &apos;days_submitted&apos;)
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill required fields should fill in each correct date from availability" file="./spec/features/voting_form_spec.rb" time="0.225840"><failure message="Unable to find test_id &quot;days_submitted&quot;" type="Capybara::ElementNotFound">Failure/Error: days = find(:test_id, &apos;days_submitted&apos;)
 
 Capybara::ElementNotFound:
   Unable to find test_id &quot;days_submitted&quot;
-./spec/features/voting_form_spec.rb:30:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+./spec/features/voting_form_spec.rb:20:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill required fields fills in name but not calendar" file="./spec/features/voting_form_spec.rb" time="0.010377"><failure message="No route matches [POST] &quot;/events/48&quot;" type="ActionController::RoutingError">Failure/Error: find(:test_id, &apos;submit&apos;).click
+
+ActionController::RoutingError:
+  No route matches [POST] &quot;/events/48&quot;
+./spec/features/voting_form_spec.rb:28:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
 </testsuite>

@@ -13,6 +13,7 @@ RSpec.feature 'VotingForms', type: :feature do
       # random generated availbility
       availbility = duration.map(&:to_s).sample(rand(1..(duration.count)))
 
+      find(:test_id, 'name').fill_in with: name
       page.all(:test_id, 'day').each do |day|
         day.click if availability.include?(day.value)
       end
