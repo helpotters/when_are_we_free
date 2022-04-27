@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature 'VotingForms', type: :feature do
   let(:event) { create(:event) }
   let(:duration) { event.start_date..event.end_date }
-  let(:availability) { duration.map(&:to_a).sample(rand(1..duration.count)) }
+  let(:availability) { duration.to_a.sample(rand(1..duration.count)) }
+
   before do
     visit event_url(event.id)
     find(:test_id, 'name').fill_in(with: Faker::Movies::LordOfTheRings.character)
