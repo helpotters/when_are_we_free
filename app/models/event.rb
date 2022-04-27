@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   validates :description, length: { in: 0..200 }
   validates :start_date, presence: true
   validates :end_date, presence: true
+  has_many :voters
 
   before_validation :clean_inputs, only: %i[title description]
 

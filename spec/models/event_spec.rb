@@ -15,4 +15,7 @@ RSpec.describe Event, type: :model do
     it { is_expected.to allow_value(Date.today + 1).for(:end_date) }
     it { is_expected.to allow_value(Date.today.strftime('%F').to_s).for(:end_date) }
   end
+  context 'associations' do
+    it { is_expected.to have_many(:voters) }
+  end
 end
