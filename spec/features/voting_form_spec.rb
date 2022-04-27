@@ -8,23 +8,20 @@ RSpec.feature 'VotingForms', type: :feature do
   before do
     visit event_url(event.id)
   end
-
-  # Can select any day in calendar
-  def self.fill_forms
-    it 'select days in calendar' do
-      availbility = duration.map(&:to_s).sample
-      find(:test_id, 'name').fill_in with: name
+  context 'does fill required fields' do
+    it 'should fill in each correct date from availability' do
+      # random generated availbility
+      availbility = duration.map(&:to_s).sample(rand(1..(duration.count)))
 
       page.all(:test_id, 'day').each do |day|
         day.click if availability.include?(day.value)
       end
 
+      days = find(:test_id, 'days_submitted')
       expect(days).to have_content(availability.count)
       expect(page).to have_content(name)
-      days = find(:test_id, 'days_submitted')
     end
   end
-
   context 'does not fill required fields' do
     it 'fills in name but not calendar' do
       find(:test_id, 'name').fill_in with: name
@@ -33,8 +30,5 @@ RSpec.feature 'VotingForms', type: :feature do
       expect(page).to have_current_path(event_url(event.id))
       expect(page).to have_content(name)
     end
-  end
-  context 'does fill required fields' do
-    fill_forms
   end
 end

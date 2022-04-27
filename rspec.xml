@@ -1,46 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="29" skipped="5" failures="3" errors="0" time="7.253382" timestamp="2022-04-27T14:12:31-07:00" hostname="wooloo">
+<testsuite name="rspec" tests="2" skipped="0" failures="2" errors="0" time="0.232010" timestamp="2022-04-27T14:32:41-07:00" hostname="wooloo">
 <properties>
-<property name="seed" value="48797"/>
+<property name="seed" value="10085"/>
 </properties>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filling in with valid title and description week event creates an event successfully" file="./spec/features/event_creation_spec.rb" time="6.728877"></testcase>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filling in with valid title and description and selecting month event creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.053915"></testcase>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filled in with empty description creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.023044"></testcase>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filled in with empty values validates the event fields" file="./spec/features/event_creation_spec.rb" time="0.000011"><skipped/></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for title in event view" file="./spec/features/event_show_spec.rb" time="0.008826"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for description in event view" file="./spec/features/event_show_spec.rb" time="0.010537"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for start_date in event view" file="./spec/features/event_show_spec.rb" time="0.012587"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for end_date in event view" file="./spec/features/event_show_spec.rb" time="0.011108"></testcase>
-<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill required fields fills in name but not calendar" file="./spec/features/voting_form_spec.rb" time="0.013239"><failure message="No route matches [POST] &quot;/events/8&quot;" type="ActionController::RoutingError">Failure/Error: find(:test_id, &apos;submit&apos;).click
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill required fields fills in name but not calendar" file="./spec/features/voting_form_spec.rb" time="0.223574"><failure message="No route matches [POST] &quot;/events/43&quot;" type="ActionController::RoutingError">Failure/Error: find(:test_id, &apos;submit&apos;).click
 
 ActionController::RoutingError:
-  No route matches [POST] &quot;/events/8&quot;
-./spec/features/voting_form_spec.rb:24:in `block (3 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill required fields fills in name and calendar" file="./spec/features/voting_form_spec.rb" time="0.011766"><failure message="`fill_forms` is not available from within an example (e.g. an `it` block) or from constructs that run in the scope of an example (e.g. `before`, `let`, etc). It is only available on an example group (e.g. a `describe` or `context` block)." type="RSpec::Core::ExampleGroup::WrongScopeError">Failure/Error: fill_forms(availability)
-  `fill_forms` is not available from within an example (e.g. an `it` block) or from constructs that run in the scope of an example (e.g. `before`, `let`, etc). It is only available on an example group (e.g. a `describe` or `context` block).
-./spec/features/voting_form_spec.rb:36:in `block (3 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.helpers.events_helper_spec" name="EventsHelper add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/helpers/events_helper_spec.rb" file="./spec/helpers/events_helper_spec.rb" time="0.000009"><skipped/></testcase>
-<testcase classname="spec.helpers.voters_helper_spec" name="VotersHelper add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/helpers/voters_helper_spec.rb" file="./spec/helpers/voters_helper_spec.rb" time="0.000005"><skipped/></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to validate that the length of :title is between 2 and 100" file="./spec/models/event_spec.rb" time="0.005832"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to validate that the length of :description is between 0 and 200" file="./spec/models/event_spec.rb" time="0.005733"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to validate that :start_date cannot be empty/falsy" file="./spec/models/event_spec.rb" time="0.004830"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to validate that :end_date cannot be empty/falsy" file="./spec/models/event_spec.rb" time="0.005435"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to allow :start_date to be ‹Wed, 27 Apr 2022›" file="./spec/models/event_spec.rb" time="0.004458"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to allow :end_date to be ‹Thu, 28 Apr 2022›" file="./spec/models/event_spec.rb" time="0.003554"></testcase>
-<testcase classname="spec.models.event_spec" name="Event is expected to allow :end_date to be ‹&quot;2022-04-27&quot;›" file="./spec/models/event_spec.rb" time="0.003044"></testcase>
-<testcase classname="spec.models.vote_spec" name="Vote is expected to validate that :day cannot be empty/falsy" file="./spec/models/vote_spec.rb" time="0.091341"></testcase>
-<testcase classname="spec.models.vote_spec" name="Vote is expected to allow :day to be ‹Wed, 27 Apr 2022›" file="./spec/models/vote_spec.rb" time="0.011245"></testcase>
-<testcase classname="spec.models.vote_spec" name="Vote is expected to belong to event required: true" file="./spec/models/vote_spec.rb" time="0.014619"></testcase>
-<testcase classname="spec.models.vote_spec" name="Vote is expected to belong to voter required: true" file="./spec/models/vote_spec.rb" time="0.017519"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter is expected to validate that the length of :name is between 1 and 26" file="./spec/models/voter_spec.rb" time="0.011484"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter is expected to belong to event required: true" file="./spec/models/voter_spec.rb" time="0.010293"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter is expected to have many votes" file="./spec/models/voter_spec.rb" time="0.009602"></testcase>
-<testcase classname="spec.requests.events_spec" name="Events GET /index add some examples (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/requests/events_spec.rb" file="./spec/requests/events_spec.rb" time="0.000018"><skipped/></testcase>
-<testcase classname="spec.requests.voters_spec" name="Voters GET /new returns http success" file="./spec/requests/voters_spec.rb" time="0.056237"><failure message="VotersController#new is missing a template for request formats: text/html" type="ActionController::MissingExactTemplate">Failure/Error: get &quot;/voters/new&quot;
+  No route matches [POST] &quot;/events/43&quot;
+./spec/features/voting_form_spec.rb:14:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill required fields should fill in each correct date from availability" file="./spec/features/voting_form_spec.rb" time="0.007134"><failure message="Unable to find test_id &quot;days_submitted&quot;" type="Capybara::ElementNotFound">Failure/Error: days = find(:test_id, &apos;days_submitted&apos;)
 
-ActionController::MissingExactTemplate:
-  VotersController#new is missing a template for request formats: text/html
-&lt;internal:kernel&gt;:90:in `tap&apos;
-./spec/requests/voters_spec.rb:6:in `block (3 levels) in &lt;main&gt;&apos;</failure></testcase>
-<testcase classname="spec.views.voters.new" name="voters/new.html.erb add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/views/voters/new.html.erb_spec.rb" file="./spec/views/voters/new.html.erb_spec.rb" time="0.000042"><skipped/></testcase>
+Capybara::ElementNotFound:
+  Unable to find test_id &quot;days_submitted&quot;
+./spec/features/voting_form_spec.rb:30:in `block (3 levels) in &lt;top (required)&gt;&apos;</failure></testcase>
 </testsuite>
