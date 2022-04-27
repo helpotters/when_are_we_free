@@ -1,4 +1,5 @@
 <%= form_with model: @voter do | form | %>
     <%= form.text_field :name, data: {test_id: "name" } %>
+    <%= form.hidden_field :event_id, value: @event.id %>
     <%= form.button data: { test_id: "submit" } %>
 <% end %>

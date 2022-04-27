@@ -17,6 +17,7 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @voter = Voter.new
   end
 
   def event_params
