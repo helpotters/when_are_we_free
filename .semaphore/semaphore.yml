@@ -39,7 +39,7 @@ blocks:
       epilogue:
         always:
           commands:
-            - test-results publish rspec.xml
+            - test-results publish junit.xml
         on_pass:
           commands:
             - echo "RSpec test complete."
@@ -50,8 +50,7 @@ blocks:
         - name: RSpec Test
           commands:
             - echo "running rspec..."
-            - rspec_booster --job $SEMAPHORE_JOB_INDEX/$SEMAPHORE_JOB_COUNT
-          parallelism: 5
+            - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format documentation
     dependencies:
       - 'Build '
 after_pipeline:
