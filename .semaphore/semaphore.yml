@@ -1,14 +1,11 @@
 version: v1.0
-name: Test Development Branch
+name: Test MyApp
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
-fail_fast:
-  stop:
-    when: 'true'
 blocks:
-  - name: 'Build '
+  - name: Setup
     task:
       env_vars:
         - name: DATABASE_URL
@@ -16,7 +13,7 @@ blocks:
         - name: RAILS_ENV
           value: test
       jobs:
-        - name: Checkout and Bundle
+        - name: Checkout and Start
           commands:
             - checkout
             - sem-service start postgres 11
@@ -26,8 +23,7 @@ blocks:
             - bundle install --deployment --path vendor/bundle
             - cache store
             - echo "Gems installed."
-            - 'bundle exec rake db:create db:schema:load'
-            - 'bundle exec rails assets:precompile'
+            - 'bundle exec rake db:setup'
             - echo "Completed database setup"
       epilogue:
         on_pass:
@@ -40,25 +36,15 @@ blocks:
       epilogue:
         always:
           commands:
-            - test-results publish results.xml
-            - ls -al | grep .xml
-        on_pass:
-          commands:
-            - echo "RSpec test complete."
-        on_fail:
-          commands:
-            - 'echo "Test failed." '
+            - echo "RSpec testing completed."
+            - test-results publish junit.xml
+            - echo "Tests published."
       jobs:
         - name: RSpec Test
           commands:
             - echo "running rspec..."
             - rspec_booster --job $SEMAPHORE_JOB_INDEX/$SEMAPHORE_JOB_COUNT
-          parallelism: 4
-    dependencies:
-      - 'Build '
-after_pipeline:
-  task:
-    jobs:
-      - name: Publish Test Results
-        commands:
-          - test-results gen-pipeline-report
+          parallelism: 5
+promotions:
+  - name: Promotion 1
+    pipeline_file: pipeline_2.yml
