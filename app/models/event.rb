@@ -1,10 +1,17 @@
 class Event < ApplicationRecord
   validates :title, length: { in: 2..100 }
-  validates :description, length: { in: 0..100 }
+  validates :description, length: { in: 0..200 }
   validates :start_date, presence: true
   validates :end_date, presence: true
+  has_many :voters
 
   before_validation :clean_inputs, only: %i[title description]
+
+  def days
+    arr = []
+    (start_date..end_date).each.map { |day| arr << { start_time: day, end_time: day } }
+    arr.map { |hsh| OpenStruct.new(hsh) }
+  end
 
   private
 

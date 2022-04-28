@@ -2,6 +2,6 @@
     <%= form.text_field :title, data: {test_id: 'title_field'} %>
     <%= form.text_field :description, data: {test_id: 'description_field'} %>
     <%= form.hidden_field :start_date, value: Date.today %>
-    <%= form.button :end_date, data: {test_id: "week_event"}, value: Date.today%>
-    <%= form.button :end_date, data: {test_id: "month_event"}, value: Date.today%>
+    <%= form.button :end_date, data: {test_id: "week_event"}, value: Date.today.end_of_week %>
+    <%= form.button :end_date, data: {test_id: "month_event"}, value: Date.today.end_of_month %>
 <% end %>

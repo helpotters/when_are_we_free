@@ -1,1 +1,17 @@
 <h1 class="title" data-test-id="event_title"><%= @event.title %></h1>
+<h2 class="title" data-test-id="event_description"><%= @event.description%></h2>
+<h2 class="title" data-test-id="event_start_date"><%= @event.start_date%></h2>
+<h2 class="title" data-test-id="event_end_date"><%= @event.end_date%></h2>
+<% @event.voters.each do |voter| %>
+    <article>
+        <span><%= voter.name %></span>
+        <span><%= voter.votes.count %></span>
+        <% voter.votes.each do |vote| %>
+            <%= vote.day.strftime("%A").to_s %>
+        <% end %>
+        <div>
+        </div>
+    </article>
+<% end %>
+
+<%= render "voters/form", local: {voter: @voter} %>

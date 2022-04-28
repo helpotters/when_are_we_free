@@ -75,3 +75,13 @@ gem "faker", "~> 2.20"
 gem "shoulda-matchers", "~> 5.1"
 
 gem "rspec_junit_formatter", "~> 0.5.1", :group => :test
+
+gem "date_validator", "~> 0.12.0"
+
+gem "simple_calendar", "~> 2.4"
+
+gem "guard", "~> 2.18", :group => :development
+
+gem "guard-livereload", "~> 2.5", :group => :development
+
+gem "simplecov", "~> 0.21.2", :group => :test
