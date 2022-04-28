@@ -19,6 +19,7 @@ class VotersController < ApplicationController
   private
 
   def voter_params
-    params.require(:voter).permit(:name, :event_id)
+    params.require(:voter).permit(:name, :event_id,
+                                  votes_attributes: %i[day _destroy event_id voter_id])
   end
 end

@@ -1,5 +1,14 @@
 <%= form_with model: @voter do | form | %>
     <%= form.text_field :name, data: {test_id: "name" } %>
     <%= form.hidden_field :event_id, value: @event.id %>
+    <%= form.fields_for "votes_attributes[]", Vote.new do |vote_form|  %>
+        <%= calendar(start_date: Date.today, number_of_days: @event.days.count) do |date| %>
+            <%= vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date %>
+            <%= vote_form.hidden_field :day, value: date %>
+            <%= vote_form.hidden_field :voter_id, value: @voter.id %>
+            <%= vote_form.hidden_field :event_id, value: @event.id %>
+            <%= date %>
+        <% end %>
+    <% end %>
     <%= form.button data: { test_id: "submit" } %>
 <% end %>

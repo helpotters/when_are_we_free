@@ -7,6 +7,12 @@ class Event < ApplicationRecord
 
   before_validation :clean_inputs, only: %i[title description]
 
+  def days
+    arr = []
+    (start_date..end_date).each.map { |day| arr << { start_time: day, end_time: day } }
+    arr.map { |hsh| OpenStruct.new(hsh) }
+  end
+
   private
 
   def clean_inputs

@@ -17,9 +17,9 @@ RSpec.feature 'VotingForms', type: :feature do
   end
   context 'does fill in availability' do
     it 'fills in every day of availability' do
-      days = page.all(id: '#calendar_day')
+      days = page.all(:test_id, 'calendar_day')
       days.each do |day|
-        day.click if availability.include?(day.value)
+        day.click if availability.include?(Date.parse(day[:id]))
       end
 
       find(:test_id, 'submit').click

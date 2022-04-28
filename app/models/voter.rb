@@ -5,5 +5,7 @@ class Voter < ApplicationRecord
   belongs_to :event
   has_many :votes
 
-  accepts_nested_attributes_for :votes
+  accepts_nested_attributes_for :votes, allow_destroy: true, reject_if: proc { |vote|
+                                                                          true unless vote.key?('day')
+                                                                        }
 end
