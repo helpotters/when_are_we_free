@@ -39,7 +39,8 @@ blocks:
       epilogue:
         always:
           commands:
-            - test-results publish junit.xml
+            - test-results publish results.xml
+            - ls -al | grep .xml
         on_pass:
           commands:
             - echo "RSpec test complete."
