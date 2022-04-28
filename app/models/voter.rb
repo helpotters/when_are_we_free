@@ -4,4 +4,6 @@ class Voter < ApplicationRecord
   validates_length_of :name, maximum: 26, message: 'is too long (maximum is 26 characters)'
   belongs_to :event
   has_many :votes
+
+  accepts_nested_attributes_for :votes
 end
