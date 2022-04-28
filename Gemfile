@@ -83,3 +83,5 @@ gem "simple_calendar", "~> 2.4"
 gem "guard", "~> 2.18", :group => :development
 
 gem "guard-livereload", "~> 2.5", :group => :development
+
+gem "simplecov", "~> 0.21.2", :group => :test
