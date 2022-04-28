@@ -50,7 +50,7 @@ blocks:
         - name: RSpec Test
           commands:
             - echo "running rspec..."
-            - bundle exec rspec --format RspecJunitFormatter --out junit.xml --format documentation
+            - rspec --format RspecJunitFormatter --out junit.xml --format documentation
     dependencies:
       - 'Build '
 after_pipeline:
