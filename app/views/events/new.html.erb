@@ -14,9 +14,9 @@
             <%= form.hidden_field :start_date, value: Date.today %>
             <div class="divider"></div>
             <div class="container mx-auto bg-neutral p-2 rounded">
-                <div class="btn-group nm-flat-neutral-500 py-1 px-1">
-                    <%= form.button :end_date, data: {test_id: "week_event"}, value: Date.today + 7, class: "btn hover:nm-inset-neutral-500" %>
-                    <%= form.button :end_date, data: {test_id: "month_event"}, value: Date.today + 31, class: "btn hover:nm-inset-neutral-500" %>
+                <div class="btn-group nm-flat-neutral-500 py-1 px-1 justify-center">
+                    <%= form.button "Week Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 7, class: "btn hover:nm-inset-neutral-500 text-center" %>
+                    <%= form.button "Month Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "month_event"}, value: Date.today + 31, class: "btn hover:nm-inset-neutral-500 text-center" %>
                 </div>
             </div>
         <% end %>
