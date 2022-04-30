@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-04-27T22:07:07-07:00">2022-04-27T22:07:07-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-04-29T21:11:38-07:00">2022-04-29T21:11:38-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.09
+         3.77
        </span>
     </span> hits/line
     )
@@ -154,7 +154,7 @@
             <td class="cell--number">15</td>
             <td class="cell--number">15</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">14.07</td>
+            <td class="cell--number">21.93</td>
             
           </tr>
         
@@ -176,7 +176,7 @@
             <td class="cell--number">8</td>
             <td class="cell--number">8</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.63</td>
+            <td class="cell--number">3.88</td>
             
           </tr>
         
@@ -337,11 +337,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#509257d687bb9be006182371a65bc87b2ff82154" class="src_link" title="spec/features/voting_form_spec.rb">spec/features/voting_form_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">29</td>
+            <td class="cell--number">31</td>
             <td class="cell--number">19</td>
             <td class="cell--number">19</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.47</td>
+            <td class="cell--number">2.11</td>
             
           </tr>
         
@@ -1519,8 +1519,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="51" data-linenumber="12">
-            <span class="hits">51</span>
+          <li class="covered" data-hits="110" data-linenumber="12">
+            <span class="hits">110</span>
             
 
             
@@ -1530,8 +1530,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="51" data-linenumber="13">
-            <span class="hits">51</span>
+          <li class="covered" data-hits="110" data-linenumber="13">
+            <span class="hits">110</span>
             
 
             
@@ -1845,8 +1845,8 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="9">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="24" data-linenumber="9">
+            <span class="hits">24</span>
             
 
             
@@ -4950,139 +4950,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  context &#39;does not fill in availability&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="13">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;just submits name&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      find(:test_id, &#39;submit&#39;).click</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      expect(Voter.last.votes.count).to eq(0)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="18">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  context &#39;does fill in availability&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="19">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">    it &#39;fills in every day of availability&#39; do</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="20">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      days = page.all(:test_id, &#39;calendar_day&#39;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="21">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">      days.each do |day|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="4" data-linenumber="22">
-            <span class="hits">4</span>
-            
-
-            
-
-            <code class="ruby">        day.click if availability.include?(Date.parse(day[:id]))</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -5093,7 +4961,29 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="25">
+          <li class="covered" data-hits="1" data-linenumber="13">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  context &#39;does not fill in availability&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="14">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;just submits name&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
             <span class="hits">1</span>
             
 
@@ -5104,18 +4994,18 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="26">
+          <li class="covered" data-hits="1" data-linenumber="16">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">      expect(Voter.last.votes.count).to eq(availability.count)</code>
+            <code class="ruby">      expect(Voter.last.votes.count).to eq(0)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -5126,7 +5016,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="28">
+          <li class="never" data-hits="" data-linenumber="18">
             
             
 
@@ -5137,7 +5027,139 @@
         </div>
       
         <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  context &#39;does fill in availability&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    it &#39;fills in every day of availability&#39; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="22">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      days = page.all(:test_id, &#39;calendar_day&#39;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="23">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      days.each do |day|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="16" data-linenumber="24">
+            <span class="hits">16</span>
+            
+
+            
+
+            <code class="ruby">        day.click if availability.include?(Date.parse(day[:id]))</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">      end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="27">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      find(:test_id, &#39;submit&#39;).click</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="28">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      expect(Voter.last.votes.count).to eq(availability.count)</code>
+          </li>
+        </div>
+      
+        <div>
           <li class="never" data-hits="" data-linenumber="29">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="30">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="31">
             
             
 
