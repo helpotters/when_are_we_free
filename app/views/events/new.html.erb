@@ -10,8 +10,10 @@
                 <%= form.text_field :description, data: {test_id: 'description_field'}, class: "input input-bordered" %>
             </div>
             <%= form.hidden_field :start_date, value: Date.today %>
-            <%= form.button :end_date, data: {test_id: "week_event"}, value: Date.today.end_of_week %>
-            <%= form.button :end_date, data: {test_id: "month_event"}, value: Date.today.end_of_month %>
+            <div class="btn-group">
+                <%= form.button :end_date, data: {test_id: "week_event"}, value: Date.today.end_of_week, class: "btn" %>
+                <%= form.button :end_date, data: {test_id: "month_event"}, value: Date.today.end_of_month, class: "btn" %>
+            </div>
         <% end %>
     </div>
 </div>
