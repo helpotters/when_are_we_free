@@ -1,14 +1,30 @@
 <%= form_with model: @voter do | form | %>
-    <%= form.text_field :name, data: {test_id: "name" } %>
     <%= form.hidden_field :event_id, value: @event.id %>
     <%= form.fields_for "votes_attributes[]", Vote.new do |vote_form|  %>
-        <%= calendar(start_date: Date.today, number_of_days: @event.days.count) do |date| %>
-            <%= vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date %>
-            <%= vote_form.hidden_field :day, value: date %>
-            <%= vote_form.hidden_field :voter_id, value: @voter.id %>
-            <%= vote_form.hidden_field :event_id, value: @event.id %>
-            <%= date %>
-        <% end %>
+        <div class="nm-flat-base-500 p-1">
+            <%= calendar(start_date: Date.today, number_of_days: @event.days.count) do |date| %>
+                <%= vote_form.hidden_field :day, value: date %>
+                <%= vote_form.hidden_field :voter_id, value: @voter.id %>
+                <%= vote_form.hidden_field :event_id, value: @event.id %>
+                <div class="container nm-flat-base-500 hover:nm-inset-base-500">
+                    <label class="swap swap-rotate text-center p-1">
+                        <!-- this hidden checkbox controls the state -->
+                        <%= vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date %>
+
+                        <div class="swap-on text-center">
+                            <%= date.strftime("%A") %>,</br>
+                            <%= date.strftime("%d") %>
+                        </div>
+                        <!-- moon icon -->
+                        <svg class="swap-off fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/></svg>
+
+                    </label>
+                </div>
+            <% end %>
+        </div>
     <% end %>
-    <%= form.button data: { test_id: "submit" } %>
+    <div class="nm-flat-base-500 text-center">
+        <%= form.text_field :name, data: {test_id: "name" }, class: "input focus:outline-0 nm-inset-base-500 focus:nm-inset-base-500", placeholder: "name here..." %>
+        <%= form.button data: { test_id: "submit" }, class: "btn hover:nm-inset-neutral-500" %>
+    </div>
 <% end %>
