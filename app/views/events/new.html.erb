@@ -11,8 +11,8 @@
             </div>
             <%= form.hidden_field :start_date, value: Date.today %>
             <div class="btn-group">
-                <%= form.button :end_date, data: {test_id: "week_event"}, value: Date.today.end_of_week, class: "btn" %>
-                <%= form.button :end_date, data: {test_id: "month_event"}, value: Date.today.end_of_month, class: "btn" %>
+                <%= form.button :end_date, data: {test_id: "week_event"}, value: Date.today + 7, class: "btn" %>
+                <%= form.button :end_date, data: {test_id: "month_event"}, value: Date.today + 31, class: "btn" %>
             </div>
         <% end %>
     </div>
