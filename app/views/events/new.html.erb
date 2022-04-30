@@ -3,7 +3,7 @@
         <%= form_for :event, url: events_path, html: {class: "form"} do | form | %>
             <div class="form-control nm-flat-">
                 <label class="input-group input-group-vertical" for="">
-                    <span class="">Event Title</span>
+                    <span class="py-1">Event Title</span>
                     <%= form.text_field :title, data: {test_id: 'title_field'}, class: "input focus:outline-0 focus:nm-inset-base-500 input-ghost nm-inset-base-500" %>
                 </label>
             </div>
