@@ -10,7 +10,7 @@
                     <% @event.majority(@event.id).each do | vote |  %>
                         <% break if vote[1] < 2 %>
                         <div class="stat">
-                            <span class="stat-title"><%= Date.parse(vote[0].to_s).strftime("%a") %></span>
+                            <span class="stat-title"><%= Date.parse(vote[0].to_s).strftime("%a, %d") %></span>
                             <span class="stat-value"><%= vote[1] %></span>
                         </div>
                     <% end %>
