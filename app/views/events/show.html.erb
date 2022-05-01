@@ -9,18 +9,6 @@
             </div>
         </div>
     </div>
-    <% @event.voters.each do |voter| %>
-        <article>
-            <span><%= voter.name %></span>
-            <span><%= voter.votes.count %></span>
-            <% voter.votes.each do |vote| %>
-                <%= vote.day.strftime("%A").to_s %>
-            <% end %>
-            <div>
-            </div>
-        </article>
-    <% end %>
-
     <div class="hero">
         <h2>Tap the days you are free</h2>
         <%= render "voters/form", local: {voter: @voter} %>
