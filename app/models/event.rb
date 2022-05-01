@@ -4,6 +4,7 @@ class Event < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   has_many :voters
+  has_many :votes
 
   before_validation :clean_inputs, only: %i[title description]
 
@@ -11,6 +12,11 @@ class Event < ApplicationRecord
     arr = []
     (start_date..end_date).each.map { |day| arr << { start_time: day, end_time: day } }
     arr.map { |hsh| OpenStruct.new(hsh) }
+  end
+
+  def majority(id)
+    vote_query = Event.where(id: id).joins(:votes).group('events.id').group('votes.day').count
+    sorted_days = vote_query.sort_by { |_date, count| count }.reverse.to_a
   end
 
   private
