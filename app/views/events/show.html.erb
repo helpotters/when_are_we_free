@@ -1,8 +1,14 @@
 <div class="h-screen w-full flex flex-col">
-    <h1 class="title" data-test-id="event_title"><%= @event.title %></h1>
-    <h2 class="title" data-test-id="event_description"><%= @event.description%></h2>
-    <h2 class="title" data-test-id="event_start_date"><%= @event.start_date%></h2>
-    <h2 class="title" data-test-id="event_end_date"><%= @event.end_date%></h2>
+    <div class="hero bg-base-200">
+        <div class="hero-content text-center">
+            <div class="max-w-md">
+                <h2 class="badge" data-test-id="event_start_date"><%= @event.start_date%></h2>
+                <h2 class="badge" data-test-id="event_end_date"><%= @event.end_date%></h2>
+                <h1 class="pt-2 text-5xl font-bold" data-test-id="event_title"><%= @event.title %></h1>
+                <p class="py-6"><%= @event.description %></p>
+            </div>
+        </div>
+    </div>
     <% @event.voters.each do |voter| %>
         <article>
             <span><%= voter.name %></span>
@@ -16,6 +22,7 @@
     <% end %>
 
     <div class="hero">
+        <h2>Tap the days you are free</h2>
         <%= render "voters/form", local: {voter: @voter} %>
     </div>
 </div>
