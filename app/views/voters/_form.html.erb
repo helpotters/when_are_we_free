@@ -6,12 +6,12 @@
                 <%= vote_form.hidden_field :day, value: date %>
                 <%= vote_form.hidden_field :voter_id, value: @voter.id %>
                 <%= vote_form.hidden_field :event_id, value: @event.id %>
-                <div class="container nm-flat-base-500 hover:nm-inset-base-500 rounded-xl p-1">
+                <div class="nm-flat-base-500 hover:nm-inset-base-500 rounded-xl p-1">
                     <label class="swap swap-rotate text-center p-1">
                         <!-- this hidden checkbox controls the state -->
                         <%= vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date %>
 
-                        <div class="swap-on text-center">
+                        <div class="swap-on text-center font-Indie">
                             <%= date.strftime("%A") %>,</br>
                             <%= date.strftime("%d") %>
                         </div>

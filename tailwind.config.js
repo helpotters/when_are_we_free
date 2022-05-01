@@ -15,6 +15,11 @@ module.exports = {
         }, ],
     },
     theme: {
+        extend: {
+          fontFamily: {
+                Indie: ["Indie Flower", "cursive"],
+          },
+        },
         neumorphismColor: {
             'primary': {
                 DEFAULT: '#1B365D',
