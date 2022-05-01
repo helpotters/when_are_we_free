@@ -2,12 +2,13 @@
     <div class="hero bg-base-200">
         <div class="hero-content text-center">
             <div class="max-w-md">
-                <h2 class="badge" data-test-id="event_start_date"><%= @event.start_date%></h2>
-                <h2 class="badge" data-test-id="event_end_date"><%= @event.end_date%></h2>
-                <h1 class="pt-2 text-5xl font-bold" data-test-id="event_title"><%= @event.title %></h1>
-                <p class="py-6" data-test-id="event_description"><%= @event.description %></p>
+                <h2 class="badge" data-test-id="event_start_date"><%= @event.start_date.strftime("%B-%d") %></h2>
+                <h2 class="badge" data-test-id="event_end_date"><%= @event.end_date.strftime("%B-%d") %></h2>
+                <h1 class="pt-2 text-xl font-bold" data-test-id="event_title"><%= @event.title %></h1>
+                <p class="py-2" data-test-id="event_description"><%= @event.description %></p>
                 <div class="stats flex flex-row">
                     <% @event.majority(@event.id).each do | vote |  %>
+                        <% break if vote[1] < 2 %>
                         <div class="stat">
                             <span class="stat-title"><%= Date.parse(vote[0].to_s).strftime("%a") %></span>
                             <span class="stat-value"><%= vote[1] %></span>
