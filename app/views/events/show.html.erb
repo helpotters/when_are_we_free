@@ -8,15 +8,10 @@
                 <p class="py-6" data-test-id="event_description"><%= @event.description %></p>
                 <div class="stats">
                     <% @event.voters.each do |voter| %>
-                        <article class="badge">
-                            <span class="stat-title"><%= voter.name %></span>
+                        <div class="badge flex">
+                            <span class="stat-title px-1"><%= voter.name %></span>
                             <span class="stat-value text-xs"><%= voter.votes.count %> Days </span>
-                            <% voter.votes.each do |vote| %>
-                                <%= vote.day.strftime("%A").to_s %>
-                            <% end %>
-                            <div>
-                            </div>
-                        </article>
+                        </div>
                     <% end %>
                 </div>
             </div>
