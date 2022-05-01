@@ -1,26 +1,27 @@
 <div class="container mx-auto max-h-screen">
     <div class="hero text-center py-10">
         <%= form_for :event, url: events_path, html: {class: "form"} do | form | %>
-            <div class="form-control nm-flat-">
-                <label class="input-group input-group-vertical" for="">
-                    <span class="py-1">Event Title</span>
-                    <%= form.text_field :title, data: {test_id: 'title_field'},
-                     class: "input focus:outline-0 focus:nm-inset-base-500 input-ghost nm-inset-base-500" %>
-                </label>
-            </div>
             <div class="form-control">
-                <label class="label" for="">Description</label>
-                <%= form.text_field :description, data: {test_id: 'description_field'},
-                 class: "input focus:outline-0 focus:nm-inset-base-500 nm-inset-base-500" %>
+                <div class="container bg-secondary p-4 rounded">
+                    <label class="input-group input-group-vertical" for="">
+                        <span class="py-1 bg-secondary">Event Title</span>
+                        <%= form.text_field :title, data: {test_id: 'title_field'},
+                         placeholder: "Type here...",
+                         class: "input focus:outline-0 focus:nm-inset-secondary-500 input-ghost nm-inset-secondary-500 placeholder:italic" %>
+                    </label>
+                    <div class="form-control">
+                        <label class="label" for="">Description</label>
+                        <%= form.text_field :description, data: {test_id: 'description_field'},
+                         class: "input focus:outline-0 focus:nm-inset-secondary-500 nm-inset-secondary-500" %>
+                    </div>
+                </div>
             </div>
             <%= form.hidden_field :start_date, value: Date.today %>
             <div class="divider"></div>
-            <div class="container mx-auto bg-neutral p-2 rounded">
                 <div class="py-1 px-1 justify-center space-x-1">
-                    <%= form.button "Week Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 7, class: "btn nm-flat-neutral-500 hover:nm-inset-neutral-500 text-center" %>
-                    <%= form.button "Month Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "month_event"}, value: Date.today + 31, class: "btn nm-flat-neutral-500 hover:nm-inset-neutral-500 text-center" %>
+                    <%= form.button "Week Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 7, class: "btn nm-flat-primary-500 hover:nm-inset-primary-500 text-center" %>
+                    <%= form.button "Month Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "month_event"}, value: Date.today + 31, class: "btn nm-flat-primary-500 hover:nm-inset-primary-500 text-center" %>
                 </div>
-            </div>
         <% end %>
     </div>
 </div>

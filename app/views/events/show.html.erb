@@ -6,6 +6,19 @@
                 <h2 class="badge" data-test-id="event_end_date"><%= @event.end_date%></h2>
                 <h1 class="pt-2 text-5xl font-bold" data-test-id="event_title"><%= @event.title %></h1>
                 <p class="py-6" data-test-id="event_description"><%= @event.description %></p>
+                <div class="stats">
+                    <% @event.voters.each do |voter| %>
+                        <article class="badge">
+                            <span class="stat-title"><%= voter.name %></span>
+                            <span class="stat-value text-xs"><%= voter.votes.count %> Days </span>
+                            <% voter.votes.each do |vote| %>
+                                <%= vote.day.strftime("%A").to_s %>
+                            <% end %>
+                            <div>
+                            </div>
+                        </article>
+                    <% end %>
+                </div>
             </div>
         </div>
     </div>
