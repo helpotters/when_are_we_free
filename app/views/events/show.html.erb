@@ -9,7 +9,7 @@
                 <div class="stats flex flex-row">
                     <% max = @event.majority(@event.id).first %>
                     <% @event.majority(@event.id).each do | vote |  %>
-                        <% break if vote[1] < max[1] %>
+                        <% break if vote[1] < max[1] || vote[1] < 2 %>
                         <div class="stat">
                             <span class="stat-title"><%= Date.parse(vote[0].to_s).strftime("%a, %d") %></span>
                             <span class="stat-value"><%= vote[1] %></span>
