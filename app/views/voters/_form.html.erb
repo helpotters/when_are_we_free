@@ -3,13 +3,12 @@
     <%= form.fields_for "votes_attributes[]", Vote.new do |vote_form|  %>
         <div class="nm-flat-base-500 p-1">
             <%= calendar(start_date: Date.today, number_of_days: @event.days.count) do |date| %>
-                <div class="nm-flat-base-500 hover:nm-inset-base-500 rounded-xl aspect-square text-center p-1">
-                    <label class="swap swap-rotate p-2">
+                <div class="lg:nm-flat-base-500 hover:nm-inset-base-500 rounded-xl aspect-square text-center nm-inset-base-500 p-1">
+                    <label class="swap swap-rotate lg:p-2">
                         <!-- this hidden checkbox controls the state -->
                         <%= vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date %>
-                        <div class="swap-on text-center font-Indie">
-                            <span class="text-sm"><%= date.strftime("%a") %>,</span></br>
-                            <span class="text-sm"><%= date.strftime("%d") %></span>
+                        <div class="swap-on text-center pt-3 font-Indie">
+                            <span class="text-md lg:text-xl lg:font-bold"><%= date.strftime("%d") %></span>
                         </div>
                         <!-- moon icon -->
                         <svg class="swap-off stroke-green-300 w-10 h-10 self-stretch" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -21,10 +20,10 @@
                     </label>
                 </div>
             <% end %>
-        </div>
     <% end %>
     <div class="nm-flat-base-500 text-center">
         <%= form.text_field :name, data: {test_id: "name" }, class: "input focus:outline-0 nm-inset-base-500 focus:nm-inset-base-500", placeholder: "name here..." %>
         <%= form.button data: { test_id: "submit" }, class: "btn hover:nm-inset-neutral-500" %>
     </div>
 <% end %>
+        </div>

@@ -1,7 +1,7 @@
-<div class="simple-calendar p-1">
-  <span class="calendar-title"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+<div class="simple-calendar text-center p-1">
 
-  <table class="table table-striped">
+  <span class="calendar-title text-slate-400"><%= t('date.month_names')[start_date.month] %> <%= start_date.year %></span>
+  <table class="lg:table sm:table-auto table-striped">
     <thead>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
