@@ -4,8 +4,8 @@
             <div class="max-w-md">
                 <h2 class="badge" data-test-id="event_start_date"><%= @event.start_date.strftime("%B-%d") %></h2>
                 <h2 class="badge" data-test-id="event_end_date"><%= @event.end_date.strftime("%B-%d") %></h2>
-                <h1 class="pt-2 text-xl font-bold" data-test-id="event_title"><%= @event.title %></h1>
-                <p class="py-2" data-test-id="event_description"><%= @event.description %></p>
+                <h1 class="pt-2 text-xl font-bold" data-test-id="event_title"><%= title @event.title %></h1>
+                <p class="py-2" data-test-id="event_description"><%= description @event.description %></p>
                 <div class="stats flex flex-row">
                     <% max = @event.majority(@event.id).first %>
                     <% @event.majority(@event.id).each do | vote |  %>
