@@ -6,7 +6,7 @@ class Event < ApplicationRecord
   validates :end_date, presence: true
   has_many :voters
   has_many :votes
-  friendly_id :title, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
 
   before_validation :clean_inputs, only: %i[title description]
 
@@ -19,6 +19,14 @@ class Event < ApplicationRecord
   def majority(id)
     vote_query = Event.where(id: id).joins(:votes).group('events.id').group('votes.day').count
     sorted_days = vote_query.sort_by { |_date, count| count }.reverse.to_a
+  end
+
+  def slug_candidates
+    [
+      :title,
+      %i[title description],
+      %i[title description end_date]
+    ]
   end
 
   private
