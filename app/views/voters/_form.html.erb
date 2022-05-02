@@ -7,7 +7,7 @@
                     <label class="swap swap-rotate lg:p-2">
                         <!-- this hidden checkbox controls the state -->
                         <%= vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date %>
-                        <div class="swap-on text-center pt-3 font-Indie">
+                        <div class="swap-on text-center pt-3 font-Karla">
                             <span class="text-md lg:text-xl lg:font-bold"><%= date.strftime("%d") %></span>
                         </div>
                         <!-- moon icon -->
@@ -22,7 +22,7 @@
             <% end %>
     <% end %>
     <div class="nm-flat-base-500 text-center">
-        <%= form.text_field :name, data: {test_id: "name" }, class: "input focus:outline-0 nm-inset-base-500 focus:nm-inset-base-500 sm:input-lg", placeholder: "Type name..." %>
+        <%= form.text_field :name, data: {test_id: "name" }, class: "input focus:outline-0 nm-inset-base-500 focus:nm-inset-base-500 sm:input-lg font-Karla", placeholder: "Type name..." %>
         <%= form.button "Share", data: { test_id: "submit" }, class: "btn hover:nm-inset-neutral-500" %>
     </div>
 <% end %>
