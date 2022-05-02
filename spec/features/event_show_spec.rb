@@ -14,6 +14,6 @@ RSpec.feature 'EventShow', type: :feature do
   end
 
   context 'View Basic Information' do
-    %w[title description start_date end_date].each { |attribute| view_content(attribute) }
+    %w[title description].each { |attribute| view_content(attribute) }
   end
 end

@@ -1,48 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="31" skipped="6" failures="1" errors="0" time="0.942625" timestamp="2022-04-30T21:45:32-07:00" hostname="wooloo">
+<testsuite name="rspec" tests="29" skipped="6" failures="0" errors="0" time="0.645203" timestamp="2022-05-01T19:21:19-07:00" hostname="wooloo">
 <properties>
-<property name="seed" value="4473"/>
+<property name="seed" value="4939"/>
 </properties>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filling in with valid title and description week event creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.135029"><failure message="No such file or directory @ rb_file_s_rename - (/home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/tmp/cache/assets/sprockets/v4.0.0/p0/p0JGCdgPpEF64Rl09V8ytcDjCH7mVzzwW6DdThckWr8.cache.5900.33896.654954, /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/tmp/cache/assets/sprockets/v4.0.0/p0/p0JGCdgPpEF64Rl09V8ytcDjCH7mVzzwW6DdThckWr8.cache)" type="ActionView::Template::Error">Failure/Error: &lt;%= stylesheet_link_tag &quot;application&quot;, &quot;data-turbo-track&quot;: &quot;reload&quot; %&gt;
-
-ActionView::Template::Error:
-  No such file or directory @ rb_file_s_rename - (/home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/tmp/cache/assets/sprockets/v4.0.0/p0/p0JGCdgPpEF64Rl09V8ytcDjCH7mVzzwW6DdThckWr8.cache.5900.33896.654954, /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/tmp/cache/assets/sprockets/v4.0.0/p0/p0JGCdgPpEF64Rl09V8ytcDjCH7mVzzwW6DdThckWr8.cache)
-./app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___829863040246494145_28740&apos;
-&lt;internal:kernel&gt;:90:in `tap&apos;
-./spec/features/event_creation_spec.rb:6:in `block (2 levels) in &lt;top (required)&gt;&apos;
-------------------
---- Caused by: ---
-Errno::ENOENT:
-  No such file or directory @ rb_file_s_rename - (/home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/tmp/cache/assets/sprockets/v4.0.0/p0/p0JGCdgPpEF64Rl09V8ytcDjCH7mVzzwW6DdThckWr8.cache.5900.33896.654954, /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/tmp/cache/assets/sprockets/v4.0.0/p0/p0JGCdgPpEF64Rl09V8ytcDjCH7mVzzwW6DdThckWr8.cache)
-  ./app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb___829863040246494145_28740&apos;</failure></testcase>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filling in with valid title and description and selecting month event creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.450956"></testcase>
-<testcase classname="spec.features.event_creation_spec" name="Event Creation when filled in with empty description creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.026345"></testcase>
+<testcase classname="spec.features.event_creation_spec" name="Event Creation when filling in with valid title and description week event creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.362016"></testcase>
+<testcase classname="spec.features.event_creation_spec" name="Event Creation when filling in with valid title and description and selecting month event creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.033387"></testcase>
+<testcase classname="spec.features.event_creation_spec" name="Event Creation when filled in with empty description creates an event successfully" file="./spec/features/event_creation_spec.rb" time="0.024108"></testcase>
 <testcase classname="spec.features.event_creation_spec" name="Event Creation when filled in with empty values validates the event fields" file="./spec/features/event_creation_spec.rb" time="0.000009"><skipped/></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for title in event view" file="./spec/features/event_show_spec.rb" time="0.022979"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for description in event view" file="./spec/features/event_show_spec.rb" time="0.018806"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for start_date in event view" file="./spec/features/event_show_spec.rb" time="0.015737"></testcase>
-<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for end_date in event view" file="./spec/features/event_show_spec.rb" time="0.021564"></testcase>
-<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill in availability just submits name" file="./spec/features/voting_form_spec.rb" time="0.059917"></testcase>
-<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill in availability fills in every day of availability" file="./spec/features/voting_form_spec.rb" time="0.060714"></testcase>
-<testcase classname="spec.helpers.events_helper_spec" name="EventsHelper add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/helpers/events_helper_spec.rb" file="./spec/helpers/events_helper_spec.rb" time="0.000007"><skipped/></testcase>
-<testcase classname="spec.helpers.voters_helper_spec" name="VotersHelper add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/helpers/voters_helper_spec.rb" file="./spec/helpers/voters_helper_spec.rb" time="0.000005"><skipped/></testcase>
-<testcase classname="spec.models.event_spec" name="Event validations is expected to validate that the length of :title is between 2 and 100" file="./spec/models/event_spec.rb" time="0.006141"></testcase>
-<testcase classname="spec.models.event_spec" name="Event validations is expected to validate that the length of :description is between 0 and 200" file="./spec/models/event_spec.rb" time="0.005586"></testcase>
-<testcase classname="spec.models.event_spec" name="Event validations is expected to validate that :start_date cannot be empty/falsy" file="./spec/models/event_spec.rb" time="0.008065"></testcase>
-<testcase classname="spec.models.event_spec" name="Event validations is expected to validate that :end_date cannot be empty/falsy" file="./spec/models/event_spec.rb" time="0.005930"></testcase>
-<testcase classname="spec.models.event_spec" name="Event value tests is expected to allow :start_date to be ‹Sat, 30 Apr 2022›" file="./spec/models/event_spec.rb" time="0.004925"></testcase>
-<testcase classname="spec.models.event_spec" name="Event value tests is expected to allow :end_date to be ‹Sun, 01 May 2022›" file="./spec/models/event_spec.rb" time="0.003862"></testcase>
-<testcase classname="spec.models.event_spec" name="Event value tests is expected to allow :end_date to be ‹&quot;2022-04-30&quot;›" file="./spec/models/event_spec.rb" time="0.003923"></testcase>
-<testcase classname="spec.models.event_spec" name="Event associations is expected to have many voters" file="./spec/models/event_spec.rb" time="0.003525"></testcase>
-<testcase classname="spec.models.vote_spec" name="Vote is expected to validate that :day cannot be empty/falsy" file="./spec/models/vote_spec.rb" time="0.014460"></testcase>
-<testcase classname="spec.models.vote_spec" name="Vote is expected to allow :day to be ‹Sat, 30 Apr 2022›" file="./spec/models/vote_spec.rb" time="0.011373"></testcase>
-<testcase classname="spec.models.vote_spec" name="Vote is expected to belong to event required: true" file="./spec/models/vote_spec.rb" time="0.012664"></testcase>
-<testcase classname="spec.models.vote_spec" name="Vote is expected to belong to voter required: true" file="./spec/models/vote_spec.rb" time="0.012057"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter validations is expected to validate that the length of :name is between 1 and 26" file="./spec/models/voter_spec.rb" time="0.007869"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter associations is expected to belong to event required: true" file="./spec/models/voter_spec.rb" time="0.007169"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter associations is expected to have many votes" file="./spec/models/voter_spec.rb" time="0.007502"></testcase>
-<testcase classname="spec.models.voter_spec" name="Voter attributes is expected to accepts_nested_attributes_for :votes" file="./spec/models/voter_spec.rb" time="0.006553"></testcase>
-<testcase classname="spec.requests.events_spec" name="Events GET /index add some examples (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/requests/events_spec.rb" file="./spec/requests/events_spec.rb" time="0.000007"><skipped/></testcase>
-<testcase classname="spec.requests.voters_spec" name="Voters GET /new returns http success" file="./spec/requests/voters_spec.rb" time="0.000003"><skipped/></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for title in event view" file="./spec/features/event_show_spec.rb" time="0.014977"></testcase>
+<testcase classname="spec.features.event_show_spec" name="EventShow View Basic Information check for description in event view" file="./spec/features/event_show_spec.rb" time="0.018277"></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does not fill in availability just submits name" file="./spec/features/voting_form_spec.rb" time="0.037727"></testcase>
+<testcase classname="spec.features.voting_form_spec" name="VotingForms does fill in availability fills in every day of availability" file="./spec/features/voting_form_spec.rb" time="0.040891"></testcase>
+<testcase classname="spec.helpers.events_helper_spec" name="EventsHelper add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/helpers/events_helper_spec.rb" file="./spec/helpers/events_helper_spec.rb" time="0.000011"><skipped/></testcase>
+<testcase classname="spec.helpers.voters_helper_spec" name="VotersHelper add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/helpers/voters_helper_spec.rb" file="./spec/helpers/voters_helper_spec.rb" time="0.000004"><skipped/></testcase>
+<testcase classname="spec.models.event_spec" name="Event validations is expected to validate that the length of :title is between 2 and 100" file="./spec/models/event_spec.rb" time="0.008194"></testcase>
+<testcase classname="spec.models.event_spec" name="Event validations is expected to validate that the length of :description is between 0 and 200" file="./spec/models/event_spec.rb" time="0.005843"></testcase>
+<testcase classname="spec.models.event_spec" name="Event validations is expected to validate that :start_date cannot be empty/falsy" file="./spec/models/event_spec.rb" time="0.005935"></testcase>
+<testcase classname="spec.models.event_spec" name="Event validations is expected to validate that :end_date cannot be empty/falsy" file="./spec/models/event_spec.rb" time="0.005091"></testcase>
+<testcase classname="spec.models.event_spec" name="Event value tests is expected to allow :start_date to be ‹Sun, 01 May 2022›" file="./spec/models/event_spec.rb" time="0.004328"></testcase>
+<testcase classname="spec.models.event_spec" name="Event value tests is expected to allow :end_date to be ‹Mon, 02 May 2022›" file="./spec/models/event_spec.rb" time="0.003522"></testcase>
+<testcase classname="spec.models.event_spec" name="Event value tests is expected to allow :end_date to be ‹&quot;2022-05-01&quot;›" file="./spec/models/event_spec.rb" time="0.003449"></testcase>
+<testcase classname="spec.models.event_spec" name="Event associations is expected to have many voters" file="./spec/models/event_spec.rb" time="0.003015"></testcase>
+<testcase classname="spec.models.vote_spec" name="Vote is expected to validate that :day cannot be empty/falsy" file="./spec/models/vote_spec.rb" time="0.012323"></testcase>
+<testcase classname="spec.models.vote_spec" name="Vote is expected to allow :day to be ‹Sun, 01 May 2022›" file="./spec/models/vote_spec.rb" time="0.009151"></testcase>
+<testcase classname="spec.models.vote_spec" name="Vote is expected to belong to event required: true" file="./spec/models/vote_spec.rb" time="0.010810"></testcase>
+<testcase classname="spec.models.vote_spec" name="Vote is expected to belong to voter required: true" file="./spec/models/vote_spec.rb" time="0.011654"></testcase>
+<testcase classname="spec.models.voter_spec" name="Voter validations is expected to validate that the length of :name is between 1 and 26" file="./spec/models/voter_spec.rb" time="0.006836"></testcase>
+<testcase classname="spec.models.voter_spec" name="Voter associations is expected to belong to event required: true" file="./spec/models/voter_spec.rb" time="0.007181"></testcase>
+<testcase classname="spec.models.voter_spec" name="Voter associations is expected to have many votes" file="./spec/models/voter_spec.rb" time="0.004592"></testcase>
+<testcase classname="spec.models.voter_spec" name="Voter attributes is expected to accepts_nested_attributes_for :votes" file="./spec/models/voter_spec.rb" time="0.004406"></testcase>
+<testcase classname="spec.requests.events_spec" name="Events GET /index add some examples (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/requests/events_spec.rb" file="./spec/requests/events_spec.rb" time="0.000006"><skipped/></testcase>
+<testcase classname="spec.requests.voters_spec" name="Voters GET /new returns http success" file="./spec/requests/voters_spec.rb" time="0.000004"><skipped/></testcase>
 <testcase classname="spec.views.voters.new" name="voters/new.html.erb add some examples to (or delete) /home/helpotters/Dropbox/programming/practice/ruby_programming/rails/when_are_we_free/spec/views/voters/new.html.erb_spec.rb" file="./spec/views/voters/new.html.erb_spec.rb" time="0.000004"><skipped/></testcase>
 </testsuite>
