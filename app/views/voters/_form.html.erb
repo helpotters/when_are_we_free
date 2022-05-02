@@ -3,7 +3,7 @@
     <%= form.fields_for "votes_attributes[]", Vote.new do |vote_form|  %>
         <div class="nm-flat-base-500 p-1">
             <%= calendar(start_date: Date.today, number_of_days: @event.days.count) do |date| %>
-                <div class="lg:nm-flat-base-500 hover:nm-inset-base-500 rounded-xl aspect-square text-center p-1">
+                <div class="lg:nm-flat-base-500 hover:nm-inset-base-500 rounded-xl aspect-square text-center md:p-1">
                     <label class="swap swap-rotate lg:p-2">
                         <!-- this hidden checkbox controls the state -->
                         <%= vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date %>
