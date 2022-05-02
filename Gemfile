@@ -89,3 +89,5 @@ gem "simplecov", "~> 0.21.2", :group => :test
 gem "cssbundling-rails", "~> 1.1"
 
 gem "sprite_animation", "~> 0.3.0"
+
+gem "friendly_id", "~> 5.4"

@@ -110,6 +110,8 @@ GEM
     fastimage (2.2.6)
     ffi (1.15.5)
     formatador (1.1.0)
+    friendly_id (5.4.2)
+      activerecord (>= 4.0.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     guard (2.18.0)
@@ -300,6 +302,7 @@ DEPENDENCIES
   debug
   factory_bot_rails (~> 6.2)
   faker (~> 2.20)
+  friendly_id (~> 5.4)
   guard (~> 2.18)
   guard-livereload (~> 2.5)
   importmap-rails

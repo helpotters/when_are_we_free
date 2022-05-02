@@ -8,7 +8,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to event_url(@event.id), notice: 'Event created!' }
+        format.html { redirect_to @event, notice: 'Event created!' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -16,7 +16,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @event = Event.friendly.find(params[:id])
     @voter = Voter.new
   end
 

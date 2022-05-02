@@ -1,10 +1,12 @@
 class Event < ApplicationRecord
+  extend FriendlyId
   validates :title, length: { in: 2..100 }
   validates :description, length: { in: 0..200 }
   validates :start_date, presence: true
   validates :end_date, presence: true
   has_many :voters
   has_many :votes
+  friendly_id :title, use: :slugged
 
   before_validation :clean_inputs, only: %i[title description]
 
