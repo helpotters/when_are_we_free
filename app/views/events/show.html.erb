@@ -7,8 +7,9 @@
                 <h1 class="pt-2 text-xl font-bold" data-test-id="event_title"><%= @event.title %></h1>
                 <p class="py-2" data-test-id="event_description"><%= @event.description %></p>
                 <div class="stats flex flex-row">
+                    <% max = @event.majority(@event.id).first %>
                     <% @event.majority(@event.id).each do | vote |  %>
-                        <% break if vote[1] < 2 %>
+                        <% break if vote[1] < max[1] %>
                         <div class="stat">
                             <span class="stat-title"><%= Date.parse(vote[0].to_s).strftime("%a, %d") %></span>
                             <span class="stat-value"><%= vote[1] %></span>
@@ -20,5 +21,25 @@
     </div>
     <div class="hero">
         <%= render "voters/form", local: {voter: @voter} %>
+    </div>
+    <div class="hero">
+        <div class="hero-content">
+            <% if @event.voters.empty? %>
+                <p>Your friend's names will pop up here</p>
+            <% else %>
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title">Your friends have voted:</h2>
+                        <% @event.voters.each do | voter |  %>
+                            <span class="badge">
+                                <%= voter.name %>
+                            </span>
+                        <% end %>
+                        <div class="card-actions justify-end">
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
