@@ -18,6 +18,7 @@ module.exports = {
         extend: {
           fontFamily: {
                 Indie: ["Indie Flower", "cursive"],
+                Karla: ["Karla", "sans-serif"],
           },
         },
         neumorphismColor: {
