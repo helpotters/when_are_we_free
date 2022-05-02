@@ -87,3 +87,5 @@ gem "guard-livereload", "~> 2.5", :group => :development
 gem "simplecov", "~> 0.21.2", :group => :test
 
 gem "cssbundling-rails", "~> 1.1"
+
+gem "sprite_animation", "~> 0.3.0"
