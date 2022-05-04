@@ -93,3 +93,7 @@ gem "sprite_animation", "~> 0.3.0"
 gem "friendly_id", "~> 5.4"
 
 gem "meta-tags", "~> 2.16"
+
+gem "bullet", "~> 7.0"
+
+gem "humanize", "~> 2.5"
