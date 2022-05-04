@@ -18,7 +18,7 @@ class Event < ApplicationRecord
 
   def majority(id)
     vote_query = Event.where(id: id).joins(:votes).group('events.id').group('votes.day').count
-    sorted_days = vote_query.sort_by { |_date, count| count }.reverse.to_a
+    sorted_days = vote_query.sort_by { |_date, count| count }.to_a
   end
 
   def slug_candidates
