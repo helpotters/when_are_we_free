@@ -10,7 +10,7 @@ class VotersController < ApplicationController
         format.html { redirect_to event_path(@event), notice: 'successfuly shared availability' }
         format.json { render json: @voter, status: :ok }
       else
-        format.html { redirect_to event_path(@voter.event_id) }
+        format.html { redirect_to event_path(@event) }
         format.json { render json: @voter.errors, status: unprocessable_entity }
       end
     end
