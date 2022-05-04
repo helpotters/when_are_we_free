@@ -10,7 +10,7 @@
                     <% days = @event.majority(@event.id) %>
                     <% if  days.empty? || days.nil? %>
                     <% else %>
-                        <% @event.majority(@event.id).each do | vote |  %>
+                        <% days.each do | vote |  %>
                             <% break unless vote[1] >= 2   %>
                             <div class="stat">
                                 <span class="stat-title"><%= Date.parse(vote[0].to_s).strftime("%a, %d") %></span>
@@ -32,10 +32,12 @@
             <% else %>
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <div class="card-body">
-                        <h2 class="card-title">Your friends have voted:</h2>
+                        <% friends = days.first[1] %>
+                        <h2 class="card-title"><%= friends.humanize.titleize %> <%= "friend".pluralize(friends) %> shared availability:</h2>
                         <% @event.voters.each do | voter |  %>
                             <span class="badge">
-                                <%= voter.name %>
+                                <%= voter.name %>:
+                                <%= voter.votes.count %> days
                             </span>
                         <% end %>
                         <div class="card-actions justify-end">
