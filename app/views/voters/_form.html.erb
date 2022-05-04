@@ -2,7 +2,7 @@
     <%= form.hidden_field :event_id, value: @event.id %>
     <%= form.fields_for "votes_attributes[]", Vote.new do |vote_form|  %>
         <div class="nm-flat-base-500 p-1">
-            <%= calendar(start_date: Date.today, number_of_days: @event.days.count) do |date| %>
+            <%= calendar(start_date: @event.start_date, number_of_days: @event.days.count) do |date| %>
                 <div class="lg:nm-flat-base-500 hover:nm-inset-base-500 rounded-xl aspect-square text-center md:p-1">
                     <label class="swap swap-rotate lg:p-2">
                         <!-- this hidden checkbox controls the state -->

@@ -12,7 +12,7 @@ class Event < ApplicationRecord
 
   def days
     arr = []
-    (start_date..end_date).each.map { |day| arr << { start_time: day, end_time: day } }
+    (start_date..end_date).each.map { |day| arr << { start_date: day, end_date: day } }
     arr.map { |hsh| OpenStruct.new(hsh) }
   end
 
