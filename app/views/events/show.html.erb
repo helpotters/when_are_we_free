@@ -6,6 +6,7 @@
                 <h2 class="badge" data-test-id="event_end_date"><%= @event.end_date.strftime("%B-%d") %></h2>
                 <h1 class="pt-2 text-xl font-bold" data-test-id="event_title"><%= title @event.title %></h1>
                 <p class="py-2" data-test-id="event_description"><%= description @event.description %></p>
+                <% keywords "#{@event.start_date.strftime("%B-%d")}, #{@event.end_date.strftime("%B-%d")}" %>
 
                 <div class="stats flex flex-row">
                     <% days = @event.majority(@event.id) %>
