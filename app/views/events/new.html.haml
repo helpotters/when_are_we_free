@@ -1,0 +1,22 @@
+.hero.mx-auto.max-h-screen.flex.flex-col
+  .text-center.py-5
+    = form_for :event, url: events_path, html: {class: "form"} do | form |
+      .form-control
+        .container.bg-base.p-4.rounded
+          %label.input-group.input-group-vertical{:for => ""}
+            %span.py-1.bg-base Event Title
+            = form.text_field :title, data: {test_id: 'title_field'},                                       |
+              placeholder: "Going to the movies!",                                                          |
+              class: "input focus:outline-0 focus:nm-inset-base-500 input-ghost nm-inset-base-500 input-lg" |
+          .form-control
+            %label.label{:for => ""} Description
+            = form.text_field :description, data: {test_id: 'description_field'},               |
+              placeholder: "We gotta see Sprited Away",                                         |
+              class: "input focus:outline-0 focus:nm-inset-base-500 nm-inset-base-500 input-lg" |
+      = form.hidden_field :start_date, value: Date.today
+      .divider
+      %h2.font-Indie Create and then tap your free days
+      .divider
+      .p-4.justify-center.space-x-1.bg-neutral
+        = form.button "Week Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 6, class: "btn nm-flat-neutral-500 hover:nm-inset-neutral-500 text-center"
+        = form.button "Month Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "month_event"}, value: Date.today + 31, class: "btn nm-flat-neutral-500 hover:nm-inset-neutral-500 text-center"

@@ -97,3 +97,5 @@ gem "meta-tags", "~> 2.16"
 gem "bullet", "~> 7.0"
 
 gem "humanize", "~> 2.5"
+
+gem "haml-rails", "~> 2.0"
