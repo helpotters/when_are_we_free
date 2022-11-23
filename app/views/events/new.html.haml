@@ -1,22 +1,33 @@
-.hero.mx-auto.max-h-screen.flex.flex-col
-  .text-center.py-5
+.max-h-screen.min-h-screen.flex.justify-center.items-center{:class => "gap-2.5"}
+  .flex.flex-col.justify-start.items-center.self-stretch.flex-grow{:class => "gap-2.5 bg-[#84aea0]"}
+    .flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.relative{:class => "gap-[87px] px-2.5"}
+      %p.flex-grow-0.flex-shrink-0.text-2xl.text-left{:class => "text-[#0a1d18]"} when are we free?
+      .flex.justify-start.items-start.flex-grow-0.flex-shrink-0{:class => "gap-2.5 p-2.5"}
+        .flex.flex-col.justify-center.items-center.flex-grow-0.flex-shrink-0.relative{:class => "p-[5px] rounded-[360px] bg-[#0a1d18]"}
+          %svg.flex-grow-0.flex-shrink-0{:fill => "none", :height => "20", :preserveaspectratio => "none", :viewbox => "0 0 21 20", :width => "21", :xmlns => "http://www.w3.org/2000/svg"}
+            %path{:d => "M19.25 8.75H11.75V1.25C11.75 0.918479 11.6183 0.600537 11.3839 0.366117C11.1495 0.131696 10.8315 0 10.5 0C10.1685 0 9.85054 0.131696 9.61612 0.366117C9.3817 0.600537 9.25 0.918479 9.25 1.25V8.75H1.75C1.41848 8.75 1.10054 8.8817 0.866117 9.11612C0.631696 9.35054 0.5 9.66848 0.5 10C0.5 10.3315 0.631696 10.6495 0.866117 10.8839C1.10054 11.1183 1.41848 11.25 1.75 11.25H9.25V18.75C9.25 19.0815 9.3817 19.3995 9.61612 19.6339C9.85054 19.8683 10.1685 20 10.5 20C10.8315 20 11.1495 19.8683 11.3839 19.6339C11.6183 19.3995 11.75 19.0815 11.75 18.75V11.25H19.25C19.5815 11.25 19.8995 11.1183 20.1339 10.8839C20.3683 10.6495 20.5 10.3315 20.5 10C20.5 9.66848 20.3683 9.35054 20.1339 9.11612C19.8995 8.8817 19.5815 8.75 19.25 8.75Z", :fill => "white"}
     = form_for :event, url: events_path, html: {class: "form"} do | form |
-      .form-control
-        .container.bg-base.p-4.rounded
-          %label.input-group.input-group-vertical{:for => ""}
-            %span.py-1.bg-base Event Title
-            = form.text_field :title, data: {test_id: 'title_field'},                                       |
-              placeholder: "Going to the movies!",                                                          |
-              class: "input focus:outline-0 focus:nm-inset-base-500 input-ghost nm-inset-base-500 input-lg" |
-          .form-control
-            %label.label{:for => ""} Description
-            = form.text_field :description, data: {test_id: 'description_field'},               |
-              placeholder: "We gotta see Sprited Away",                                         |
-              class: "input focus:outline-0 focus:nm-inset-base-500 nm-inset-base-500 input-lg" |
-      = form.hidden_field :start_date, value: Date.today
-      .divider
-      %h2.font-Indie Create and then tap your free days
-      .divider
-      .p-4.justify-center.space-x-1.bg-neutral
-        = form.button "Week Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 6, class: "btn nm-flat-neutral-500 hover:nm-inset-neutral-500 text-center"
-        = form.button "Month Event", id: "event_end_date", name: "event[end_date]", data: {test_id: "month_event"}, value: Date.today + 31, class: "btn nm-flat-neutral-500 hover:nm-inset-neutral-500 text-center"
+      .flex.flex-col.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.gap-1.px-2{:class => "py-2.5"}
+        .flex.flex-col.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.gap-1.py-2.rounded-lg.bg-white{:class => "px-[9px]"}
+          .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] gap-2.5 p-2.5"}
+            %p.flex-grow-0.flex-shrink-0.text-xl.text-left.capitalize{:class => "text-[#7c7c7c]"}
+              Name of your event
+            .flex.justify-start.items-center.self-stretch.flex-grow-0.flex-shrink-0.relative.gap-16{:class => "p-2.5 rounded-[9px] bg-[#eee]"}
+              %p.flex-grow-0.flex-shrink-0.text-base.font-medium.text-left{:class => "text-[#7a7a7a]"}
+                = form.text_field :title, data: {test_id: 'title_field'},
+                  placeholder: "We gotta see Sprited Away"
+              .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.relative.bg-white{:class => "gap-2.5 px-3.5 rounded-[27px]"}
+                %p.flex-grow-0.flex-shrink-0.text-center.lowercase{:class => "text-[15px] text-[#7a7a7a]"}
+                = form.text_field :description, data: {test_id: 'description_field'},
+                  placeholder: "We gotta see Sprited Away"
+          .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] gap-2.5 p-2.5"}
+            %p.flex-grow-0.flex-shrink-0.text-xl.text-left.capitalize{:class => "text-[#7c7c7c]"}
+              How far into the future?
+            .flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px] bg-[#eee]"}
+              .flex.flex-col.justify-center.items-center.self-stretch.flex-grow.relative.overflow-hidden.py-3{:class => "gap-2.5 px-[18px] rounded-[7px] bg-[#0a1d18]"}
+                %p.flex-grow-0.flex-shrink-0.text-base.font-bold.text-left.text-white
+                  = form.button "Week", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 6
+              .flex.flex-col.justify-center.items-center.self-stretch.flex-grow.relative.overflow-hidden.py-3{:class => "gap-2.5 px-[18px] rounded-[7px] bg-[#0a1d18]"}
+                %p.flex-grow-0.flex-shrink-0.text-base.font-bold.text-left.text-white
+                  = form.button "Month", id: "event_end_date", name: "event[end_date]", data: {test_id: "month_event"}, value: Date.today + 31
+              = form.hidden_field :start_date, value: Date.today
