@@ -1,26 +1,27 @@
 = form_with model: @voter do | form |
   = form.hidden_field :event_id, value: @event.id
   = form.fields_for "votes_attributes[]", Vote.new do |vote_form|
-    .flex.flex-col.justify-center.items-center.self-stretch.flex-grow.gap-1.px-4.rounded-lg.bg-white
+    .my-1.flex.flex-col.justify-center.items-center.flex-grow.gap-1.px-4.rounded-lg.bg-white
       = calendar(start_date: @event.start_date, number_of_days: @event.days.count) do |date|
-        .lg:nm-flat-base-500.hover:nm-inset-base-500.rounded-xl.aspect-square.text-center.md:p-1
+        .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.relative.p-1
           %label.swap.swap-rotate.lg:p-2
             / this hidden checkbox controls the state
             = vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date
-            .swap-on.text-center.pt-3.font-Karla
-              %span.text-primary.text-md.font-rubik.lg:text-xl.font-bold= date.strftime("%d")
+            .swap-on.justify-center.items-center.flex-grow-0.flex-shrink-0.relative
+              %span.font-rubik.text-neutral.font-bold.text-right{:class => "w-[299px] h-[24.83px] text-[#537d6c]"}
+                = date.strftime("%d")
             / checkmark icon
-            %svg.swap-off.stroke-green-300.w-10.h-10.self-stretch{:fill => "none", :stroke => "currentColor", "stroke-width" => "2", :viewbox => "0 0 24 24", :xmlns => "https://www.w3.org/2000/svg"}
+            %svg.swap-off.stroke-green-300.w-10.h-10{:fill => "none", :stroke => "currentColor", "stroke-width" => "2", :viewbox => "0 0 24 24", :xmlns => "https://www.w3.org/2000/svg"}
               %path{:d => "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", "stroke-linecap" => "round", "stroke-linejoin" => "round"}
             = vote_form.hidden_field :day, value: date
             = vote_form.hidden_field :voter_id, value: @voter.id
             = vote_form.hidden_field :event_id, value: @event.id
-      .flex.flex-col.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.py-2.rounded-lg.bg-white{:class => "px-[9px]"}
-        .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0{:class => "w-[347px] gap-2.5 p-2.5"}
-          .flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px]"}
-            .flex.flex-col.justify-center.items-start.self-stretch.flex-grow.relative.overflow-hidden.rounded-lg.bg-neutral-300{:class => "gap-2.5 p-2.5"}
-              %p.flex-grow-0.flex-shrink-0.text-base.font-medium.text-left{:class => "text-[#7a7a7a]"}
-                = form.text_field :name, data: {test_id: "name" }, class: "", placeholder: "Type name..."
-            .flex.flex-col.justify-center.items-center.flex-grow-0.flex-shrink-0.relative.overflow-hidden.py-3{:class => "gap-2.5 px-[18px] rounded-[7px] bg-[#0a1d18]"}
-              %p.flex-grow-0.flex-shrink-0.text-base.font-bold.text-left.text-white
+    .mt-2.flex.flex-col.justify-center.items-center.gap-1.px-4.rounded-lg.bg-white
+      .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0{:class => "gap-2.5 p-2.5"}
+        .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px]"}
+          .flex.flex-col.justify-center.items-start.flex-grow.relative.overflow-hidden.rounded-lg{:class => "gap-2.5 p-2.5"}
+            %p.flex-grow-0.flex-shrink-0.text-base.font-medium.text-left{:class => "text-[#7a7a7a]"}
+              = form.text_field :name, data: {test_id: "name" }, class: "", placeholder: "Type name..."
+          .flex.flex-col.justify-center.items-center.flex-grow-0.flex-shrink-0.relative.overflow-hidden.py-3{:class => "gap-2.5 px-[18px] rounded-[7px] bg-[#0a1d18]"}
+            %p.flex-grow-0.flex-shrink-0.text-base.font-bold.text-left.text-white
               = form.button "Share", data: { test_id: "submit" }, class: ""

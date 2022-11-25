@@ -1,12 +1,12 @@
 .simple-calendar.text-center.p-1
-  %span.calendar-title.text-slate-400
+  %span.calendar-title
     = t('date.month_names')[start_date.month]
     = start_date.year
-  %table.lg:table.sm:table-auto.table-striped
+  %table.table-auto.table-striped
     %thead.text-center
       %tr
         - date_range.slice(0, 7).each do |day|
-          %th= t('date.abbr_day_names')[day.wday]
+          %th.font-rubik.text-neutral.font-bold= t('date.abbr_day_names')[day.wday]
     %tbody
       - date_range.each_slice(7) do |week|
         = content_tag :tr, class: calendar.tr_classes_for(week) do
