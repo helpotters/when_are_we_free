@@ -6,20 +6,16 @@
     .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] gap-2.5 p-2.5"}
       %p.flex-grow-0.flex-shrink-0.text-xl.text-left{:class => "text-[#7c7c7c]"}
         = description @event.description
-      .flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px] bg-[#eee]"}
-        .flex.flex-col.justify-start.items-start.flex-grow-0.flex-shrink-0.w-6.h-6.overflow-hidden{:class => "gap-2.5 p-2.5 rounded-[360px] bg-[#f77]"}
-    -# %h2.badge{"data-test-id" => "event_start_date"}= @event.start_date.strftime("%B-%d")
-    -# %h2.badge{"data-test-id" => "event_end_date"}= @event.end_date.strftime("%B-%d")
-    -# - keywords "#{@event.start_date.strftime("%B-%d")}, #{@event.end_date.strftime("%B-%d")}"
-    -# .stats.flex.flex-row
-    - days = @event.majority(@event.id)
-    -#   - if  days.empty? || days.nil?
-    -#   - else
-    -#     - days.each do | vote |
-    -#       - break unless vote[1] >= 2
-    -#       .stat
-    -#         %span.stat-title= Date.parse(vote[0].to_s).strftime("%a, %d")
-    -#         %span.stat-value= vote[1]
+      - days = @event.majority(@event.id)
+      - if  days.empty? || days.nil?
+      - else
+        - days.each do | vote |
+          .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] px-2.5"}
+            - break unless vote[1] >= 2
+            .flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px] bg-[#eee]"}
+              %span.font-rubik.text-black= Date.parse(vote[0].to_s).strftime("%A %b, %d")
+              .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.w-6.h-6{:class => "rounded-[360px] bg-[#f77]"}
+                %span.text-white.font-rubik= vote[1]
   .flex.flex-col.justify-center.items-center.gap-4
     = render "voters/form", local: {voter: @voter}
     - if @event.voters.empty?
