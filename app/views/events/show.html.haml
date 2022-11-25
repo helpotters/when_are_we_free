@@ -10,8 +10,8 @@
       - if  days.empty? || days.nil?
       - else
         - days.each do | vote |
+          - break unless vote[1] >= 2
           .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] px-2.5"}
-            - break unless vote[1] >= 2
             .flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px] bg-[#eee]"}
               %span.font-rubik.text-black= Date.parse(vote[0].to_s).strftime("%A %b, %d")
               .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.w-6.h-6{:class => "rounded-[360px] bg-[#f77]"}
