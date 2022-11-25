@@ -1,7 +1,7 @@
 .max-h-screen.min-h-screen.flex.justify-center.items-center{:class => "gap-2.5"}
   .flex.flex-col.justify-start.items-center.self-stretch.flex-grow{:class => "gap-2.5 bg-[#84aea0]"}
     .flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.relative{:class => "gap-[87px] px-2.5"}
-      %p.flex-grow-0.flex-shrink-0.text-2xl.text-left{:class => "text-[#0a1d18]"} when are we free?
+      %p.flex-grow-0.flex-shrink-0.text-2xl.text-left.font-bold.font-baloo{:class => "text-[#0a1d18]"} when are we free?
       .flex.justify-start.items-start.flex-grow-0.flex-shrink-0{:class => "gap-2.5 p-2.5"}
         .flex.flex-col.justify-center.items-center.flex-grow-0.flex-shrink-0.relative{:class => "p-[5px] rounded-[360px] bg-[#0a1d18]"}
           %svg.flex-grow-0.flex-shrink-0{:fill => "none", :height => "20", :preserveaspectratio => "none", :viewbox => "0 0 21 20", :width => "21", :xmlns => "http://www.w3.org/2000/svg"}
@@ -15,11 +15,15 @@
             .flex.justify-start.items-center.self-stretch.flex-grow-0.flex-shrink-0.relative.gap-16{:class => "p-2.5 rounded-[9px] bg-[#eee]"}
               %p.flex-grow-0.flex-shrink-0.text-base.font-medium.text-left{:class => "text-[#7a7a7a]"}
                 = form.text_field :title, data: {test_id: 'title_field'},
-                  placeholder: "We gotta see Sprited Away"
-              .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.relative.bg-white{:class => "gap-2.5 px-3.5 rounded-[27px]"}
-                %p.flex-grow-0.flex-shrink-0.text-center.lowercase{:class => "text-[15px] text-[#7a7a7a]"}
+                  placeholder: "Kikis Delivery Service",
+                  class: "bg-transparent"
+            %p.flex-grow-0.flex-shrink-0.text-xl.text-left.capitalize{:class => "text-[#7c7c7c]"}
+              Description
+            .flex.justify-start.items-center.self-stretch.flex-grow-0.flex-shrink-0.relative.gap-16{:class => "p-2.5 rounded-[9px] bg-[#eee]"}
+              %p.flex-grow-0.flex-shrink-0.text-base.font-medium.text-left{:class => "text-[#7a7a7a]"}
                 = form.text_field :description, data: {test_id: 'description_field'},
-                  placeholder: "We gotta see Sprited Away"
+                  placeholder: "The mindflayer will go down",
+                  class: "bg-transparent"
           .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] gap-2.5 p-2.5"}
             %p.flex-grow-0.flex-shrink-0.text-xl.text-left.capitalize{:class => "text-[#7c7c7c]"}
               How far into the future?

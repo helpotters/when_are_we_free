@@ -19,6 +19,7 @@ module.exports = {
                         fontFamily: {
                                 inter: ["Inter", "sans-serif"],
                                 lexend: ["Lexend", "sans-serif"],
+                                baloo: ["Baloo 2", "cursive"],
                                 rubik: ["Rubik", "sans-serif"],
                         },
                 },
