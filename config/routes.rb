@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :events, :voters
 
   # Defines the root path route ("/")
-  root 'events#new'
+  root 'events#index'
 end

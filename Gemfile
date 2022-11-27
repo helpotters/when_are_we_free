@@ -99,3 +99,5 @@ gem "bullet", "~> 7.0"
 gem "humanize", "~> 2.5"
 
 gem "haml-rails", "~> 2.0"
+
+gem "foreman", "~> 0.87.2"

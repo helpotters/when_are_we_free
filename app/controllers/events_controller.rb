@@ -3,6 +3,9 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def index
+  end
+
   def create
     @event = Event.create(event_params)
 
