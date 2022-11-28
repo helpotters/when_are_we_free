@@ -1,40 +1,36 @@
-.max-h-screen.min-h-screen.max-w-screen.flex.flex-col.bg-primary.gap-2.px-2.py-1.pt-2.lg:p-0
-  .flex.flex-col.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.py-2.px-4.rounded-lg.bg-white
-    .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "gap-2.5 p-2.5"}
-      %p.flex-grow-0.flex-shrink-0.text-xl.font-lexend.font-medium.text-left.capitalize.text-black
+.max-h-screen.min-h-screen.bg-primary.flex.flex-col.gap-4.px-2
+  .card.bg-white.justify-center.items-center.p-4.w-full.gap-2
+    .card-title.flex.flex-col.justify-start.items-start.text-left.w-full.gap-2
+      %h1.font-lexend.font-bold.text-black.text-left
         = title @event.title
-    .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] gap-2.5 p-2.5"}
-      %p.flex-grow-0.flex-shrink-0.text-xl.text-left{:class => "text-[#7c7c7c]"}
+      %p.font-inter.text-gray.text-md.font-regular
         = description @event.description
+    .card-content.flex.flex-col.justify-center.items-start.gap-2
       - days = @event.majority(@event.id)
       - if  days.empty? || days.nil?
       - else
         - days.each do | vote |
           - break unless vote[1] >= 2
-          .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] px-2.5"}
-            .flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px] bg-[#eee]"}
-              %span.font-rubik.text-black= Date.parse(vote[0].to_s).strftime("%A %b, %d")
-              .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.w-6.h-6{:class => "rounded-[360px] bg-[#f77]"}
-                %span.text-white.font-rubik= vote[1]
-  .flex.flex-col.justify-center.items-center.gap-4
+          .stats.w-auto.flex.flex-col
+            .stat.bg-gray-200.flex.flex-row.rounded-lg.p-4.w-80.align-center.items-center.justify-center
+              %span.stat-value.text-lg.font-rubik.text-black= Date.parse(vote[0].to_s).strftime("%A %b, %d")
+              %span.stat-figure.justify-center.flex-col.flex.items-center
+                .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.w-6.h-6{:class => "rounded-[360px] bg-[#f77]"}
+                  .text-white.font-rubik= vote[1]
+  .card.bg-white.flex.flex-col
     = render "voters/form", local: {voter: @voter}
+  .card.bg-white.flex.flex-col.justify-center.gap-4.p-4
     - if @event.voters.empty?
-      %p Your friend's names will pop up here
+      .card-title.justify-center
+        %p.text-lg.font-inter.text-gray-400.py-4 Responses will appear here.
     - else
-      .my-1.flex.flex-col.justify-center.items-center.flex-grow.gap-1.px-4.rounded-lg.bg-white
-        .flex.flex-col.justify-center.items-center.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] gap-2.5 p-2.5"}
+      .card-title.justify-center
+        %p.font-inter.text-black
           - friends = @event.voters.count
-          %p.self-stretch.flex-grow-0.flex-shrink-0.text-xl.font-medium.text-center.text-black{:class => "w-[327px]"}
-            = friends.humanize.titleize
-            = "friend".pluralize(friends)
-            are here
-        .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0.relative{:class => "w-[347px] gap-2.5 p-2.5"}
-          - @event.voters.each do | voter |
-            %p.self-stretch.flex-grow-0.flex-shrink-0.text-base.text-left{:class => "w-[327px] text-[#7c7c7c]"}
-              = "#{voter.name} has joined."
-          -# %button.btn.swap.swap-rotate.flex{:onclick => "this.classList.add('swap-active'); navigator.clipboard.writeText('https://whenarewefree.com#{event_path(@event)}'); this.firstChild.textContent = 'Copied URL'", :type => "button"}
-          -#   Tap to Copy URL
-          -#   %svg.swap-off{"aria-hidden" => "true", :height => "1em", :preserveaspectratio => "xMidYMid meet", :role => "img", :viewbox => "0 0 384 512", :width => "0.75em", :xmlns => "http://www.w3.org/2000/svg"}
-          -#     %path{:d => "M384 112v352c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112c0-26.51 21.49-48 48-48h80c0-35.29 28.71-64 64-64s64 28.71 64 64h80c26.51 0 48 21.49 48 48zM192 40c-13.255 0-24 10.745-24 24s10.745 24 24 24s24-10.745 24-24s-10.745-24-24-24m96 114v-20a6 6 0 0 0-6-6H102a6 6 0 0 0-6 6v20a6 6 0 0 0 6 6h180a6 6 0 0 0 6-6z", :fill => "currentColor"}
-          -#   %svg.swap-on{"aria-hidden" => "true", :height => "1em", :preserveaspectratio => "xMidYMid meet", :role => "img", :viewbox => "0 0 384 512", :width => "0.75em", :xmlns => "http://www.w3.org/2000/svg"}
-          -#     %path{:d => "M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 40c13.3 0 24 10.7 24 24s-10.7 24-24 24s-24-10.7-24-24s10.7-24 24-24zm121.2 231.8l-143 141.8c-4.7 4.7-12.3 4.6-17-.1l-82.6-83.3c-4.7-4.7-4.6-12.3.1-17L99.1 285c4.7-4.7 12.3-4.6 17 .1l46 46.4l106-105.2c4.7-4.7 12.3-4.6 17 .1l28.2 28.4c4.7 4.8 4.6 12.3-.1 17z", :fill => "currentColor"}
+          = friends.humanize.titleize
+          = "friend".pluralize(friends)
+          haved joined
+      .card-content.px-2
+        - @event.voters.each do | voter |
+          %p.font-inter.text-gray-400
+            = "#{voter.name} has joined."
