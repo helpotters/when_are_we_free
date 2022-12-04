@@ -30,10 +30,28 @@ class Event < ApplicationRecord
 
   def slug_candidates
     [
-      :title,
-      %i[title description],
-      %i[title description end_date]
+      [random_prefix, :title],
+      [random_monster, :title],
+      [:title, :end_date],
+      [random_prefix, :title, :end_date],
+      [random_monster, :title, :end_date]
     ]
+  end
+
+  def random_monster
+    monsters = %w[ aboleth yeti chicken acererak acolyte dragon ankheg assassin azer basilisk behir dog
+                  bugbear centaur chuul cockatrice chimera dryad dwarf gorgon gargoyle genie ghost ghoul giant
+                  gnoll gnome golem goblin ogre ooze owlbear owl orc griffon halflings harpy satyr cat bat bison boar
+                  phasm hydra howler hobgoblin hippogriff homunculus howler kobold kraken lich lycanthorpe duergar
+                  roc sprite lizardfolk elf
+                  ]
+    monsters.sample
+  end
+
+  def random_prefix
+    prefixes = %w[ youre-invited-to welcome-to a-kingly-invite-to attention twitch-presents a-personal-invite-to
+                  attention-adventurers my-lord-of-thicc]
+    prefixes.sample
   end
 
   private
