@@ -21,7 +21,7 @@
         .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px]"}
           .flex.flex-col.justify-center.items-start.flex-grow.relative.overflow-hidden.rounded-lg{:class => "gap-2.5 p-2.5"}
             %p.flex-grow-0.flex-shrink-0.text-base.font-medium.text-left{:class => "text-[#7a7a7a]"}
-              = form.text_field :name, data: {test_id: "name" }, class: "", placeholder: "Type name..."
+              = form.text_field :name, data: {test_id: "name" }, class: "", placeholder: "Type name here..."
           .flex.flex-col.justify-center.items-center.flex-grow-0.flex-shrink-0.relative.overflow-hidden.py-3{:class => "gap-2.5 px-[18px] rounded-[7px] bg-[#0a1d18]"}
             %p.flex-grow-0.flex-shrink-0.text-base.font-bold.text-left.text-white
-              = form.button "Share", data: { test_id: "submit" }, class: ""
+              = form.button "Submit", data: { test_id: "submit" }, class: ""

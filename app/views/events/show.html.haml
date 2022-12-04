@@ -34,7 +34,7 @@
           - friends = @event.voters.count
           = friends.humanize.titleize
           = "friend".pluralize(friends)
-          haved joined
+          joined
       .card-content.px-2
         - @event.voters.each do | voter |
           %p.font-inter.text-gray-400
