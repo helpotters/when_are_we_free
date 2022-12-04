@@ -1,6 +1,6 @@
 .simple-calendar.text-center.p-1
-  %span.calendar-title
-    = t('date.month_names')[start_date.month]
+  %span.calendar-title.font-rubik.font-medium
+    = t('date.abbr_month_names')[start_date.month]
     = start_date.year
   %table.table-auto.table-striped
     %thead.text-center
