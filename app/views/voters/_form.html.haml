@@ -8,7 +8,7 @@
             / this hidden checkbox controls the state
             = vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date
             .swap-on.justify-center.items-center.flex-grow-0.flex-shrink-0.relative
-              %span.font-rubik.text-neutral.font-bold.text-right{:class => "w-[299px] h-[24.83px] text-[#537d6c]"}
+              %span.font-rubik.text-primary-200.font-bold.text-right{:class => "w-[299px] h-[24.83px] text-[#537d6c]"}
                 = date.strftime("%d")
             / checkmark icon
             %svg.swap-off.stroke-green-300.w-10.h-10{:fill => "none", :stroke => "currentColor", "stroke-width" => "2", :viewbox => "0 0 24 24", :xmlns => "https://www.w3.org/2000/svg"}
