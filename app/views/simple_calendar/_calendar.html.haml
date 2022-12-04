@@ -1,8 +1,8 @@
-.simple-calendar.text-center.p-1
-  %span.calendar-title.font-rubik.font-medium
+.simple-calendar.p-1
+  %span.calendar-title.font-rubik.font-medium.text-left
     = t('date.abbr_month_names')[start_date.month]
     = start_date.year
-  %table.table-auto.table-striped
+  %table.table-auto.table-striped.text-center
     %thead.text-center
       %tr
         - date_range.slice(0, 7).each do |day|
