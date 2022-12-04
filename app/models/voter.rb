@@ -1,5 +1,5 @@
 class Voter < ApplicationRecord
-  validates_presence_of :name
+  validates :name, presence: :true, uniqueness: { scope: :event_id }
   validates_length_of :name, minimum: 1, message: 'is too short (minimum is 1 character)'
   validates_length_of :name, maximum: 26, message: 'is too long (maximum is 26 characters)'
   belongs_to :event
