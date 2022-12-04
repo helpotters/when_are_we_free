@@ -1,5 +1,5 @@
 .max-h-screen.min-h-screen.justify-start
-  .hero.p-20
+  .hero.lg:p-20
     .hero-content.flex-col
       .text-center.py-8
         %ul.steps
@@ -7,11 +7,11 @@
           %li.text-white.font-bold.step Share Schedule
           %li.text-white.font-bold.step Confirm
       .flex.flex-col.lg:flex-row.justify-center.gap-4
-        .text-center.lg:text-left.w-50.card.bg-white.p-8
-          %h1.text-5xl.text-base-100.font-inter.font-bold Create your event
-          %h2.text-2xl.py-6.text-base-300.font-inter.font-bold.break-normal
+        .text-center.lg:text-left.w-50.card.bg-white.p-8.hidden.lg:flex
+          %h1.lg:text-5xl.text-base-100.font-inter.font-bold Create your event
+          %h2.lg:text-2xl.py-6.text-base-300.font-inter.font-bold.break-normal
             Fill out the name of your event.
-          %h2.text-2xl.py-6.text-base-300.font-inter.font-bold.break-normal
+          %h2.lg:text-2xl.py-6.text-base-300.font-inter.font-bold.break-normal
             Find out who's free this week or this month.
         .card.flex.flex-col.justify-center.items-center.bg-white.rounded-md.w-full.p-4
           = form_for :event, url: events_path, html: {class: "form"} do |form|
