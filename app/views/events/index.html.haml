@@ -1,10 +1,12 @@
 .max-h-screen.min-h-screen
   .hero.h-screen.pt-40.flex.flex-col.gap-10
     .flex.flex-col.text-center#hero-info.gap-8.pb-0
-      %h1.font-lexend.font-bold.text-black.text-4xl.lg:text-5xl Defeat Scheduling
+      %h1.font-lexend.font-bold.text-black.text-4xl.lg:text-5xl
+        Defeat Scheduling
       %h2.text-xl.flex.flex-col.text-center.lg:text-3xl
-        %span.font-inter.font-bold.text-white Find Everyone’s Availability
-        %span.font-inter.font-bold.text-black in 10 seconds
+        %span.font-inter.font-bold.text-white
+          Find Everyone’s Availability
+        %span.font-inter.font-bold.text-black
+          in 10 seconds
     %a.btn.btn-accent.font-inter.font-bold.text-white.lg:text-2xl.lg:btn-lg{:href => "events/new"}
       Plan a Session
-    = image_tag "landscape", class: "bg-hero bg-auto pt-0 w-full bg-fixed h-full"
