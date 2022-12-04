@@ -1,12 +1,12 @@
 .simple-calendar.p-1
-  %span.calendar-title.font-rubik.font-medium.text-left
+  %span.calendar-title.font-rubik.font-medium.lg:text-lg
     = t('date.abbr_month_names')[start_date.month]
     = start_date.year
-  %table.table-auto.table-striped.text-center
+  %table.table-auto.table-striped.text-center.lg:text-xl
     %thead.text-center
       %tr
         - date_range.slice(0, 7).each do |day|
-          %th.font-rubik.text-neutral.font-bold= t('date.abbr_day_names')[day.wday]
+          %th.font-rubik.text-gray-400.font-bold= t('date.abbr_day_names')[day.wday]
     %tbody
       - date_range.each_slice(7) do |week|
         = content_tag :tr, class: calendar.tr_classes_for(week) do

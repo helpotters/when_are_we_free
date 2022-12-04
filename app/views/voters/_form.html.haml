@@ -17,11 +17,6 @@
             = vote_form.hidden_field :voter_id, value: @voter.id
             = vote_form.hidden_field :event_id, value: @event.id
     .mt-2.flex.flex-col.justify-center.items-center.gap-1.px-4.rounded-lg.bg-white
-      .flex.flex-col.justify-center.items-start.flex-grow-0.flex-shrink-0{:class => "gap-2.5 p-2.5"}
-        .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.gap-3{:class => "p-2.5 rounded-[9px]"}
-          .flex.flex-col.justify-center.items-start.flex-grow.relative.overflow-hidden.rounded-lg{:class => "gap-2.5 p-2.5"}
-            %p.flex-grow-0.flex-shrink-0.text-base.font-medium.text-left{:class => "text-[#7a7a7a]"}
-              = form.text_field :name, data: {test_id: "name" }, class: "", placeholder: "Type name here..."
-          .flex.flex-col.justify-center.items-center.flex-grow-0.flex-shrink-0.relative.overflow-hidden.py-3{:class => "gap-2.5 px-[18px] rounded-[7px] bg-[#0a1d18]"}
-            %p.flex-grow-0.flex-shrink-0.text-base.font-bold.text-left.text-white
-              = form.button "Submit", data: { test_id: "submit" }, class: ""
+      .form-control.flex-col.gap-2
+        = form.text_field :name, data: {test_id: "name" }, class: "input lg:input-lg input-ghost input-bordered input-md", placeholder: "Type name here..."
+        = form.button "Submit Your Availability", data: { test_id: "submit" }, class: "btn btn-primary"
