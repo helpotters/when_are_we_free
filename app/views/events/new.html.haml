@@ -13,3 +13,8 @@
         .flex.flex-row.bg-slate-100.justify-center.gap-2.rounded-md.w-full.py-1
           = form.button "Week", class: "btn btn-accent px-8 font-bold font-inter text-white", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 6
           = form.button "Month", class: "btn btn-accent px-8 font-bold font-inter text-white", id: "event_end_date", name: "event[end_date]", data: {test_id: "month_event"}, value: Date.today + 30
+      .text-center.py-8
+        %ul.steps
+          %li.text-white.font-bold.step.step-neutral Create Event
+          %li.text-white.font-bold.step Share Schedule
+          %li.text-white.font-bold.step Confirm
