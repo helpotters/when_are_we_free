@@ -44,6 +44,8 @@
           = "friend".pluralize(friends)
           joined
       .card-content.px-2
-        - @event.voters.each do | voter |
+        - @event.voters.includes([:votes]).each do | voter |
           %p.font-inter.text-gray-400
             = "#{voter.name} has joined."
+            - voter.votes.each do | vote |
+              = vote.day.strftime("%a")
