@@ -24,6 +24,20 @@
                 %label.text-2xl.font-inter.text-gray-400 What's it about?
                 = form.text_field :description, class: "input bg-gray-200 font-inter", data: {test_id: 'description_field'}, placeholder: "Time to fight the final boss"
               .form-control.flex.flex-col.w-full.gap-1
+                %label.text-2xl.font-inter.text-gray-400 How many to expect?
+                %input.bg-primary.range{max: "6", min: "2", type: "range", value: "3"}
+                .w-full.flex.justify-between.text-xs.px-2.font-rubik
+                  %span
+                    2
+                  %span
+                    3
+                  %span
+                    4
+                  %span
+                    5
+                  %span
+                    6
+              .form-control.flex.flex-col.w-full.gap-1
                 %label.text-2xl.font-inter.text-gray-400 How far into the future?
                 .flex.flex-row.bg-slate-100.justify-center.gap-2.rounded-md.w-full.py-1
                   = form.button "Week", class: "btn btn-accent px-8 font-bold font-inter text-white", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 6
