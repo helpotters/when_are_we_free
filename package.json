@@ -2,13 +2,25 @@
   "name": "app",
   "private": "true",
   "dependencies": {
-    "autoprefixer": "^10.4.5",
-    "daisyui": "^2.14.2",
-    "postcss": "^8.4.13",
-    "tailwindcss": "^3.0.24",
-    "tailwindcss-neumorphism": "^0.1.0"
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/turbo-rails": "^7.2.4",
+    "@rails/actioncable": "^7.0.0",
+    "@rails/activestorage": "^7.0.0",
+    "@rails/ujs": "^7.0.0",
+    "autoprefixer": "^10.4.13",
+    "daisyui": "^2.42.1",
+    "debounce": "^1.2.1",
+    "esbuild": "^0.14.2",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
+    "postcss-nesting": "^10.2.0",
+    "stimulus": "^3.2.1",
+    "tailwindcss": "^3.2.4",
+    "turbolinks": "^5.2.0"
   },
   "scripts": {
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
-  }
+    "build:css": "postcss ./app/assets/stylesheets/application.postcss.css -o ./app/assets/builds/application.css",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds"
+  },
+  "version": "0.1.0"
 }
