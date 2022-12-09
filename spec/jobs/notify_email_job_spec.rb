@@ -12,6 +12,10 @@ RSpec.describe NotifyEmailJob do
       allow(VoterMailer).to receive(:send_confirmation_email_to).and_return(mailer)
       allow(mailer).to receive(:deliver_now!)
     end
+
+    context 'when the user exists' do
+      before do
+        create(:voter, id: 1000)
       end
 
       it 'sends a confirmation email to them' do
