@@ -11,5 +11,14 @@ RSpec.describe VoterMailer do
     it 'renders the correct sender address' do
       expect(voter_email.from).to eql(['confirm@whenarewefree.com'])
     end
+
+    it 'renders the correct subject' do
+    end
+
+    it 'renders the correct days' do
+    end
+
+    it 'send the email to the correct address' do
+    end
   end
 end
