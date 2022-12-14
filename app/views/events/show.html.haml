@@ -10,9 +10,9 @@
         %p.text-md.font-lexend.font-bold.text-gray-400
           You've been invited!
       .flex.flex-col.justify-start.items-start.text-left.w-full.gap-1
-        %h1.text-2xl.font-lexend.font-bold.text-black.text-left
+        %h1.text-2xl.font-lexend.font-bold.text-black.text-left{ data: {test_id: "event_title"} }
           = title @event.title
-        %p.text-lg.font-inter.text-gray.font-regular
+        %p.text-lg.font-inter.text-gray.font-regular{ data: {test_id: "event_description"} }
           = description @event.description
     .flex.flex-col.justify-center.items-start.gap-2
       - days = @event.majority(@event.id)
