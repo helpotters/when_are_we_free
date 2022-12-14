@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Event Creation', type: :feature do
   let(:title) { Faker::Kpop.iii_groups }
   before do
-    visit root_path
+    visit new_event_path
   end
 
   context 'when filling in with valid title and description week event' do
