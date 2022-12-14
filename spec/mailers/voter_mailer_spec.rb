@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe VoterMailer do
   describe '#send_confirmation_email_to' do
-    subject(:voter_email) { described_class.send_confirmation_email_to(@voter) }
+    subject(:voter_email) { described_class.send_confirmation_email_to(@voter, @event.majority(@event.id)) }
 
     before(:each) do
       @event = create(:event)
