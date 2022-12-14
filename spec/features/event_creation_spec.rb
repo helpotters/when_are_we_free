@@ -9,7 +9,7 @@ RSpec.feature 'Event Creation', type: :feature do
   context 'when filling in with valid title and description week event' do
     it 'creates an event successfully' do
       find(:test_id, 'title_field').fill_in(with: title)
-      find(:test_id, 'description_field').fill_in(with: Faker::String.random)
+      find(:test_id, 'description_field').fill_in(with: 'Description, hello')
       find(:test_id, 'week_event').click
 
       expect(find(:test_id, 'event_title')).to have_content(title)
