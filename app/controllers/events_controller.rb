@@ -3,8 +3,7 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
-  def index
-  end
+  def index; end
 
   def create
     @event = Event.create(event_params)
@@ -22,6 +21,8 @@ class EventsController < ApplicationController
     @event = Event.friendly.find(params[:id])
     @voter = Voter.new
   end
+
+  private
 
   def event_params
     params.require(:event).permit(:title, :description, :start_date, :end_date)
