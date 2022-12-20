@@ -9,6 +9,8 @@ RSpec.describe Event, type: :model do
 
     it { is_expected.to validate_presence_of(:start_date) }
     it { is_expected.to validate_presence_of(:end_date) }
+
+    it { is_expected.to validate_presence_of(:minimum) }
   end
   context 'value tests' do
     it { is_expected.to allow_value(Date.today).for(:start_date) }

@@ -4,6 +4,8 @@ class Event < ApplicationRecord
   validates :description, length: { in: 0..200 }
   validates :start_date, presence: true
   validates :end_date, presence: true
+  validates :minimum, presence: true
+
   has_many :voters
   has_many :voters_with_email, -> { where.not(email: '') }, class_name: 'Voter'
 
