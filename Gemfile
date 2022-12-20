@@ -102,4 +102,6 @@ gem 'foreman', '~> 0.87.2'
 
 gem 'jsbundling-rails', '~> 1.0'
 
-gem "letter_opener", "~> 1.8", :groups => [:development, :test]
+gem 'letter_opener', '~> 1.8', groups: %i[development test]
+
+gem 'show_me_the_cookies', '~> 6.0', group: %i[test development]
