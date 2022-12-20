@@ -10,7 +10,7 @@ class NotifyEmailJob < ApplicationJob
   def email_event_members(event_id)
     event = Event.find_by(id: event_id)
     majority_days = event.majority(event_id)
-    event.voters.each do |voter|
+    event.voters_with_email.each do |voter|
       perform(voter, majority_days)
     end
   end
