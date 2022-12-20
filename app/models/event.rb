@@ -5,6 +5,8 @@ class Event < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   has_many :voters
+  has_many :voters_with_email, -> { where.not(email: '') }, class_name: 'Voter'
+
   has_many :votes
   friendly_id :slug_candidates, use: :slugged
 
@@ -16,8 +18,13 @@ class Event < ApplicationRecord
     arr.map { |hsh| OpenStruct.new(hsh) }
   end
 
+  def email_list(id)
+    event = Event.find(id)
+    event.voters_with_email
+  end
+
   def majority(id)
-    vote_query = Event.where(id: id).joins(:votes).group('events.id').group('votes.day').count
+    vote_query = Event.where(id:).joins(:votes).group('events.id').group('votes.day').count
     sorted_days = vote_query.sort_by { |_date, count| count }.reverse.to_a
     begin
       max = sorted_days.first[1]
@@ -32,29 +39,28 @@ class Event < ApplicationRecord
     [
       [random_prefix, :title],
       [random_monster, :title],
-      [:title, :end_date],
+      %i[title end_date],
       [random_prefix, :title, :end_date],
       [random_monster, :title, :end_date]
     ]
   end
 
+  private
+
   def random_monster
     monsters = %w[ aboleth yeti chicken acererak acolyte dragon ankheg assassin azer basilisk behir dog
-                  bugbear centaur chuul cockatrice chimera dryad dwarf gorgon gargoyle genie ghost ghoul giant
-                  gnoll gnome golem goblin ogre ooze owlbear owl orc griffon halflings harpy satyr cat bat bison boar
-                  phasm hydra howler hobgoblin hippogriff homunculus howler kobold kraken lich lycanthorpe duergar
-                  roc sprite lizardfolk elf
-                  ]
+                   bugbear centaur chuul cockatrice chimera dryad dwarf gorgon gargoyle genie ghost ghoul giant
+                   gnoll gnome golem goblin ogre ooze owlbear owl orc griffon halflings harpy satyr cat bat bison boar
+                   phasm hydra howler hobgoblin hippogriff homunculus howler kobold kraken lich lycanthorpe duergar
+                   roc sprite lizardfolk elf]
     monsters.sample
   end
 
   def random_prefix
     prefixes = %w[ youre-invited-to welcome-to a-kingly-invite-to attention twitch-presents a-personal-invite-to
-                  attention-adventurers my-lord-of-thicc]
+                   attention-adventurers my-lord-of-thicc]
     prefixes.sample
   end
-
-  private
 
   def clean_inputs
     self.title = title.delete("\000") unless title.nil?

@@ -3,7 +3,7 @@ class Voter < ApplicationRecord
   validates_length_of :name, minimum: 1, message: 'is too short (minimum is 1 character)'
   validates_length_of :name, maximum: 26, message: 'is too long (maximum is 26 characters)'
 
-  validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :email, allow_nil: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   belongs_to :event
   has_many :votes

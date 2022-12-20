@@ -7,6 +7,7 @@ class VotersController < ApplicationController
 
     respond_to do |format|
       if @voter.save
+        cookies[:voter_id] = @voter.id
         format.html { redirect_to event_path(@event), notice: 'successfuly shared availability' }
         format.json { render json: @voter, status: :ok }
       else
@@ -16,10 +17,17 @@ class VotersController < ApplicationController
     end
   end
 
+  def edit
+    @voter = Voter.find(cookies[:voter_id])
+    @event = Event.friendly.find(@voter.event_id)
+
+    redirect_to event_path(@event)
+  end
+
   private
 
   def voter_params
-    params.require(:voter).permit(:name, :event_id,
+    params.require(:voter).permit(:name, :event_id, :email,
                                   votes_attributes: %i[day _destroy event_id voter_id])
   end
 end

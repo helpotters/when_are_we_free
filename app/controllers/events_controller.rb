@@ -24,6 +24,7 @@ class EventsController < ApplicationController
 
   def notify
     @event = Event.friendly.find(params[:id])
+    @voter = Voter.find(cookies[:voter_id])
   end
 
   private
