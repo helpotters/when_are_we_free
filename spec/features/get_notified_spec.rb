@@ -19,9 +19,22 @@ RSpec.feature 'Get Notified', type: :feature do
     end
   end
 
-  xcontext 'before minimum is reached' do
+  context 'after minimum is reached' do
+    let(:full_event) { create(:event_with_minimum, minimum: 5, count: 4) }
+
+    let(:mailer) { instance_double(ActionMailer::MessageDelivery) }
+
+    before do
+      allow(VoterMailer).to receive(:send_confirmation_email_to).and_return(mailer)
+      allow(mailer).to receive(:deliver_now!)
+    end
+    it 'send emails once minimum is reached' do
+      expect(mailer).not_to have_received(:deliver_now!)
+      create(:voter, event: full_event)
+      expect(mailer).to have_received(:deliver_now!)
+    end
   end
 
-  xcontext 'after minimum is reached' do
+  xcontext 'before minimum is reached' do
   end
 end
