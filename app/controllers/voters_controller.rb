@@ -17,13 +17,6 @@ class VotersController < ApplicationController
     end
   end
 
-  def edit
-    @voter = Voter.find(cookies[:voter_id])
-    @event = Event.friendly.find(@voter.event_id)
-
-    redirect_to event_path(@event)
-  end
-
   def update
     @voter = Voter.find(params[:id])
     @event = Event.friendly.find(@voter.event_id)
