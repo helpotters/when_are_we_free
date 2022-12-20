@@ -8,14 +8,14 @@ RSpec.feature 'Get Notified', type: :feature do
 
   context 'submit email as contact' do
     before do
-      create_cookie('voter_id', voter.id)
+      create_cookie(:voter_id, voter.id)
       visit "notify/#{created_event.friendly_id}"
     end
 
     it 'should add email to created_event contact list' do
       find(:test_id, 'email').fill_in(with: Faker::Internet.email)
       find(:test_id, 'submit').click
-      expect(created_event.email_list(created_event.id)).to eq(1)
+      expect(created_event.email_list(created_event.id).count).to eq(1)
     end
   end
 
