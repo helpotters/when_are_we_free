@@ -1,3 +1,3 @@
-= form_with model: @voter, url: edit_voter_url(@voter), method: :patch, local: true do | form |
+= form_with model: @voter, url: voter_url(@voter), method: :patch, local: true do | form |
     = form.text_field :email, data: {test_id: "email" }, class: "input lg:input-lg input-ghost input-bordered input-md", placeholder: "Type email here..."
     = form.button "Submit Email", data: { test_id: "submit" }, class: "btn btn-primary"

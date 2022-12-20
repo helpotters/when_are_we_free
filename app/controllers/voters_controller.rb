@@ -24,6 +24,19 @@ class VotersController < ApplicationController
     redirect_to event_path(@event)
   end
 
+  def update
+    @voter = Voter.find(params[:id])
+    @event = Event.friendly.find(@voter.event_id)
+
+    if @voter.update(voter_params)
+      flash[:success] = 'Email added'
+      redirect_to event_url(@event)
+    else
+      flash.now[:error] = 'Email failed'
+      redirect_to event_url(@event)
+    end
+  end
+
   private
 
   def voter_params
