@@ -8,10 +8,10 @@ FactoryBot.define do
 
     factory :event_with_minimum do
       transient do
-        count { 5 }
+        list_count { 5 }
       end
-      after :create do |created_event|
-        create_list(:confirmed_voter, count, event: created_event)
+      after :create do |created_event, evaluator|
+        create_list(:confirmed_voter, evaluator.list_count, event: created_event)
       end
     end
   end

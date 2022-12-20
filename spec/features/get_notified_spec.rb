@@ -20,7 +20,7 @@ RSpec.feature 'Get Notified', type: :feature do
   end
 
   context 'after minimum is reached' do
-    let(:full_event) { create(:event_with_minimum, minimum: 5, count: 4) }
+    let(:full_event) { create(:event_with_minimum, minimum: 5, list_count: 4) }
 
     let(:mailer) { instance_double(ActionMailer::MessageDelivery) }
 
