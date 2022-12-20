@@ -22,6 +22,10 @@ class EventsController < ApplicationController
     @voter = Voter.new
   end
 
+  def notify
+    @event = Event.friendly.find(params[:id])
+  end
+
   private
 
   def event_params
