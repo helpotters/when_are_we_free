@@ -1,30 +1,38 @@
-.max-h-screen.bg-primary.flex.flex-col.gap-4.px-2.lg:px-80.overflow-auto
-  .text-center.py-4
-    %ul.steps
-      %li.text-white.font-bold.step.step-neutral Created!
-      %li.text-white.font-bold.step.step-neutral Shared!
-      %li.text-white.font-bold.step Confirmed!
-  .card.bg-white.justify-center.items-center.p-5.w-full.gap-1.flex.flex-col
-    .card-body
-      .card-title
-        %p.text-md.font-lexend.font-bold.text-gray-400
-          You've been invited,
-          = @voter.name
-          !
-      .flex.flex-col.justify-start.items-start.text-left.w-full.gap-1
-        %h1.text-2xl.font-lexend.font-bold.text-black.text-left
+:css
+  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800&display=swap');
+%div{:style => "display: flex; flex-direction: column; justify-content: flex-start; align-items: center; align-self: stretch; flex-grow: 1; gap: 10px; background: #84aea0;"}
+  %div{:style => "display: flex; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; position: relative; gap: 87px; padding-left: 10px; padding-right: 10px; padding-top: 17px; padding-bottom: 17px;"}
+    %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 24px; font-weight: bold; text-align: left; color: #0a1d18; font-family: 'Baloo 2', cursive;"}
+      the votes are in,
+      = @voter.name
+  %div{:style => "display: flex; flex-direction: column; justify-content: flex-start; align-items: center; align-self: stretch; flex-grow: 1; gap: 4px; padding-left: 8px; padding-right: 8px; padding-top: 10px; padding-bottom: 10px;"}
+    %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; padding-left: 9px; padding-right: 9px; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; background: #fff;"}
+      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 347px; position: relative; padding: 2px;"}
+        %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 20px; font-weight: 500; text-align: left; text-transform: capitalize; color: #000; font-family: 'Lexend', sans-serif;"}
           = title @event.title
-        %p.text-lg.font-inter.text-gray.font-regular
+      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 347px; position: relative; gap: 4px; padding: 2px;"}
+        %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 20px; text-align: left; color: #7c7c7c; font-family: 'Lexend', sans-serif;"}
           = description @event.description
-    .flex.flex-col.justify-center.items-start.gap-2
+    %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; padding-left: 9px; padding-right: 9px; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; background: #fff;"}
+      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 347px; position: relative; gap: 10px; padding: 10px;"}
+        %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 20px; font-weight: 500; text-align: left; color: #000; font-family: 'Inter', sans-serif;"}
+          Everyone voted on these days
       - days = @event.majority(@event.id)
       - if  days.empty? || days.nil?
       - else
         - days.each do | vote |
           - break unless vote[1] >= 2
-          .stats.w-auto.flex.flex-col
-            .stat.bg-gray-200.flex.flex-row.rounded-lg.p-4.w-80.align-center.items-center.justify-center
-              %span.stat-value.text-lg.font-rubik.text-black= Date.parse(vote[0].to_s).strftime("%A %b, %d")
-              %span.stat-figure.justify-center.flex-col.flex.items-center
-                .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.w-6.h-6{:class => "rounded-[360px] bg-[#f77]"}
-                  .text-white.font-rubik= vote[1]
+          %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 347px; gap: 10px; padding: 10px;"}
+            %div{:style => "display: flex; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; position: relative; gap: 12px; padding: 10px; border-radius: 9px; background: #bddcd2;"}
+              %p{:style => "flex-grow: 0; flex-shrink: 0; width: 232px; font-size: 20px; font-weight: 700; text-align: center; color: #000; font-family: 'Rubik', sans-serif;"}
+                = Date.parse(vote[0].to_s).strftime("%A %b, %d")
+              %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 0; flex-shrink: 0; height: 18px; width: 18px; position: relative; overflow: hidden; gap: 10px; padding: 10px; border-radius: 360px; background: #f77;"}
+                %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 15px; font-weight: 700; text-align: center; color: #fff; font-family: 'Rubik', sans-serif;"}
+                  = vote[1]
+    %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; padding-left: 9px; padding-right: 9px; padding-top: 8px; padding-bottom: 8px; border-radius: 8px; background: #fff;"}
+      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 0; flex-shrink: 0; width: 347px; position: relative; gap: 10px; padding: 10px;"}
+        %p{:style => "align-self: stretch; flex-grow: 0; flex-shrink: 0; width: 327px; font-size: 20px; font-weight: 500; text-align: center; color: #000;"}
+          The Party
+      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 347px; position: relative; gap: 10px; padding: 10px;"}
+        %p{:style => "align-self: stretch; flex-grow: 0; flex-shrink: 0; width: 327px; font-size: 16px; text-align: left; color: #7c7c7c;"}
+          Jimithy has joined.
