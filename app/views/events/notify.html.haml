@@ -1,3 +1,22 @@
-= form_with model: @voter, url: voter_url(@voter), method: :patch, local: true do | form |
-    = form.text_field :email, data: {test_id: "email" }, class: "input lg:input-lg input-ghost input-bordered input-md", placeholder: "Type email here..."
-    = form.button "Submit Email", data: { test_id: "submit" }, class: "btn btn-primary"
+.max-h-screen.min-h-screen.justify-start
+  .hero.lg:p-20
+    .hero-content.flex-col
+      .text-center.py-8
+        %ul.steps
+          %li.text-white.font-bold.step.step-neutral Create Event
+          %li.text-white.font-bold.step.step-neutral Share Schedule
+          %li.text-white.font-bold.step.step-neutral Confirm
+      .flex.flex-col.lg:flex-row.justify-center.gap-4
+        .text-center.lg:text-left.w-50.card.bg-white.p-8.hidden.lg:flex
+          %h1.lg:text-5xl.text-base-100.font-inter.font-bold Get notified!
+          %h2.lg:text-2xl.py-6.text-base-300.font-inter.font-bold.break-normal
+            Once everyone replies,
+          %h2.lg:text-2xl.py-6.text-base-300.font-inter.font-bold.break-normal
+            You'll get an email of the best days
+        .card.flex.flex-col.justify-center.items-center.bg-white.rounded-md.w-full.p-4
+          = form_with model: @voter, url: voter_url(@voter), method: :patch, local: true do | form |
+            .card-body.gap-4
+              .form-control.flex.flex-col.w-full.gap-1
+                %label.text-2xl.font-inter.text-gray-400 Share your email...
+                = form.text_field :email, data: {test_id: "email" }, class: "input lg:input-lg input-ghost input-bordered input-md", placeholder: "Type email here..."
+                = form.button "Submit Email", data: { test_id: "submit" }, class: "btn btn-primary"

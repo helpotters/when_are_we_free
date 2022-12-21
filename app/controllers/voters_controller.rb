@@ -8,7 +8,7 @@ class VotersController < ApplicationController
     respond_to do |format|
       if @voter.save
         cookies[:voter_id] = @voter.id
-        format.html { redirect_to event_path(@event), notice: 'successfuly shared availability' }
+        format.html { redirect_to "/notify/#{@event.id}", notice: 'successfuly shared availability' }
         format.json { render json: @voter, status: :ok }
       else
         format.html { redirect_to event_path(@event) }
