@@ -95,12 +95,12 @@ Rails.application.configure do
 
     # To render only the message body, without any metadata or extra containers or styling.
     # Default value is `:default` that renders styled message with showing useful metadata.
-    config.message_template = :light
+    config.message_template = :default
 
     # To change default file URI scheme you can provide `file_uri_scheme` config.
     # It might be useful when you use WSL (Windows Subsystem for Linux) and default
     # scheme doesn't work for you.
     # Default value is blank
-    config.file_uri_scheme = 'file://///wsl$/Ubuntu-18.04'
+    config.file_uri_scheme = 'file:///'
   end
 end
