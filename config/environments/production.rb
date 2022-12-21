@@ -76,7 +76,7 @@ Rails.application.configure do
     port: 587,
     domain: 'whenarewefree.com',
     user_name: 'api',
-    password: ENV.fetch['MAILTRAP_PASSWORD'],
+    password: ENV['MAILTRAP_PASSWORD'],
     authentication: 'plain',
     enable_starttls_auto: true
   }
