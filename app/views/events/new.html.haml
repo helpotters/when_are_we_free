@@ -19,13 +19,18 @@
               = form.hidden_field :start_date, value: Date.today
               .form-control.flex.flex-col.w-full.gap-1
                 %label.text-2xl.font-inter.text-gray-400 You're invited to...
-                = form.text_field :title, class: "input bg-gray-200 font-inter", data: {test_id: 'title_field'}, placeholder: "D&D Session"
+                = form.text_field :title, class: "input bg-gray-200 font-inter",
+                  data: { test_id: 'title_field' }, placeholder: "D&D Session"
               .form-control.flex.flex-col.w-full.gap-1
                 %label.text-2xl.font-inter.text-gray-400 What's it about?
-                = form.text_field :description, class: "input bg-gray-200 font-inter", data: {test_id: 'description_field'}, placeholder: "Time to fight the final boss"
+                = form.text_field :description, class: "input bg-gray-200 font-inter",
+                  data: { test_id: 'description_field' }, placeholder: "Time to fight the final boss"
               .form-control.flex.flex-col.w-full.gap-1
                 %label.text-2xl.font-inter.text-gray-400 How many to expect?
-                %input.bg-primary.range{max: "6", min: "2", type: "range", value: "3"}
+                = form.range_field :minimum, max: "6", min: "2", type: "range", value: "3",
+                  data: { test_id: 'minimum_field' },
+                  class: "input bg-primary range"
+
                 .w-full.flex.justify-between.text-xs.px-2.font-rubik
                   %span
                     2
@@ -40,5 +45,7 @@
               .form-control.flex.flex-col.w-full.gap-1
                 %label.text-2xl.font-inter.text-gray-400 How far into the future?
                 .flex.flex-row.bg-slate-100.justify-center.gap-2.rounded-md.w-full.py-1
-                  = form.button "Week", class: "btn btn-accent px-8 font-bold font-inter text-white", id: "event_end_date", name: "event[end_date]", data: {test_id: "week_event"}, value: Date.today + 6
-                  = form.button "Month", class: "btn btn-accent px-8 font-bold font-inter text-white", id: "event_end_date", name: "event[end_date]", data: {test_id: "month_event"}, value: Date.today + 30
+                  = form.button "Week", class: "btn btn-accent px-8 font-bold font-inter text-white", id: "event_end_date", name: "event[end_date]",
+                    data: { test_id: "week_event" }, value: Date.today + 6
+                  = form.button "Month", class: "btn btn-accent px-8 font-bold font-inter text-white", id: "event_end_date", name: "event[end_date]",
+                    data: { test_id: "month_event" }, value: Date.today + 30
