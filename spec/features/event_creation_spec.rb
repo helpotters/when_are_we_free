@@ -4,6 +4,7 @@ RSpec.feature 'Event Creation', type: :feature do
   let(:title) { Faker::Kpop.iii_groups }
   before do
     visit new_event_path
+    find(:test_id, 'minimum_field').set(5)
   end
 
   context 'when filling in with valid title and description week event' do
