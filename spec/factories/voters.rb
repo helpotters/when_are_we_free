@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :voter do
-    name { Faker::Movies::HarryPotter.character }
+    sequence(:name) { |n| "person#{n}" }
     event { create(:event) }
 
     factory :confirmed_voter do
