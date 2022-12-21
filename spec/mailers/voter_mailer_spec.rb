@@ -24,7 +24,7 @@ RSpec.describe VoterMailer do
       majorities = @voter.event.majority(@event.id)
 
       majorities.each do |day|
-        expect(voter_email.body.encoded).to include(day[0][1].to_s)
+        expect(voter_email.body.encoded).to include(day[0][1].strftime('%A %b, %d').to_s)
       end
     end
 
