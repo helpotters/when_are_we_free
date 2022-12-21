@@ -1,5 +1,5 @@
 class VoterMailer < ApplicationMailer
-  default from: 'confirm@whenarewefree.com'
+  default from: 'paullemus@protonmail.com'
   def send_confirmation_email_to(voter, majority = [])
     @voter = voter
     @majority = majority
