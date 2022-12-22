@@ -1,44 +1,173 @@
-:css
-  @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800&display=swap');
-%div{:style => "display: flex; flex-direction: column; justify-content: flex-start; align-items: center; align-self: stretch; flex-grow: 1; gap: 0.625rem; background: #84aea0;"}
-  %div{:style => "display: flex; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; position: relative; gap: 5.5rem; padding-left: 0.6rem; padding-right: 0.6rem; padding-top: 0.7rem; padding-bottom: 0.7rem;"}
-    %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 1.5rem; font-weight: bold; text-align: left; color: #0a1d18; font-family: 'Baloo 2', cursive;"}
-      the votes are in,
-      = @voter.name
-  %div{:style => "display: flex; flex-direction: column; justify-content: flex-start; align-items: center; align-self: stretch; flex-grow: 1; gap: 0.1rem; padding-left: 0.5rem; padding-right: 0.5rem; padding-top: 0.6rem; padding-bottom: 0.6rem;"}
-    %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; padding-left: 0.55rem; padding-right: 0.55rem; padding-top: 0.5rem; padding-bottom: 0.5rem; border-radius: 0.5rem; background: #fff;"}
-      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 21.688rem; position: relative; padding: 0.125rem;"}
-        %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 1.25rem; font-weight: 500; text-align: left; text-transform: capitalize; color: #000; font-family: 'Lexend', sans-serif;"}
-          = title @event.title
-      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 21.688rem; position: relative; gap: 0.25rem; padding: 0.125rem;"}
-        %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 1.25rem; text-align: left; color: #7c7c7c; font-family: 'Lexend', sans-serif;"}
-          = description @event.description
-    %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; padding-left: 0.563rem; padding-right: 0.563rem; padding-top: 0.5rem; padding-bottom: 0.5rem; border-radius: 0.5rem; background: #fff;"}
-      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 21.688rem; position: relative; gap: 0.625rem; padding: 0.625rem;"}
-        %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 1.25rem; font-weight: 500; text-align: left; color: #000; font-family: 'Inter', sans-serif;"}
-          Everyone voted on these days
-      - days = @event.majority(@event.id)
-      - if  days.empty? || days.nil?
-      - else
-        - days.each do | vote |
-          - break unless vote[1] >= 2
-          %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 21.688rem; gap: 0.625rem; padding: 0.625rem;"}
-            %div{:style => "display: flex; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; position: relative; gap: 0.75rem; padding: 0.625rem; border-radius: 0.563rem; background: #bddcd2;"}
-              %p{:style => "flex-grow: 0; flex-shrink: 0; width: 14.5rem; font-size: 1.25rem; font-weight: 700; text-align: center; color: #000; font-family: 'Rubik', sans-serif;"}
-                = Date.parse(vote[0].to_s).strftime("%A %b, %d")
-              %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 0; flex-shrink: 0; height: 1.125rem; width: 1.125rem; position: relative; overflow: hidden; gap: 0.625rem; padding: 0.625rem; border-radius: 360px; background: #f77;"}
-                %p{:style => "flex-grow: 0; flex-shrink: 0; font-size: 0.938rem; font-weight: 700; text-align: center; color: #fff; font-family: 'Rubik', sans-serif;"}
-                  = vote[1]
-    %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; align-self: stretch; flex-grow: 0; flex-shrink: 0; padding-left: 0.563rem; padding-right: 0.563rem; padding-top: 0.5rem; padding-bottom: 0.5rem; border-radius: 0.5rem; background: #fff;"}
-      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: center; flex-grow: 0; flex-shrink: 0; width: 21.688rem; position: relative; gap: 0.625rem; padding: 0.625rem;"}
-        %p{:style => "align-self: stretch; flex-grow: 0; flex-shrink: 0; width: 20.5rem; font-size: 1.25rem; font-weight: 500; text-align: center; color: #000; font-family: 'Inter', sans-serif;"}
-          - friends = @event.voters.count
-          = friends.humanize.titleize
-          = "friend".pluralize(friends)
-          joined
-      %div{:style => "display: flex; flex-direction: column; justify-content: center; align-items: flex-start; flex-grow: 0; flex-shrink: 0; width: 21.688rem; position: relative; gap: 0.625rem; padding: 0.625rem;"}
-        - @event.voters.includes([:votes]).each do | voter |
-          %p{:style => "align-self: stretch; flex-grow: 0; flex-shrink: 0; width: 20.5rem; font-size: 1rem; text-align: left; color: #7c7c7c; font-family: 'Inter', sans-serif;"}
-            = "#{voter.name} has joined."
-            - voter.votes.each do | vote |
-              = vote.day.strftime("%a %d.")
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xmlns:o" => "urn:schemas-microsoft-com:office:office", "xmlns:v" => "urn:schemas-microsoft-com:vml"}
+  %head
+    %title
+    / [if !mso]><!
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    / <![endif]
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    :css
+      #outlook a {
+        padding: 0;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+
+      table,
+      td {
+        border-collapse: collapse;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+      }
+
+      img {
+        border: 0;
+        height: auto;
+        line-height: 100%;
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+
+      p {
+        display: block;
+        margin: 13px 0;
+      }
+    /[if mso]
+      <noscript>
+      <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+      </xml>
+      </noscript>
+    /[if lte mso 11]
+      <style type="text/css">
+      \.mj-outlook-group-fix { width:100% !important; }
+      </style>
+    / [if !mso]><!
+
+    %link{:href => "https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700", :rel => "stylesheet", :type => "text/css"}/
+    :css
+      @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Inter:wght@300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800&display=swap');
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,700);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700);
+    / <![endif]
+    :css
+      @media only screen and (min-width:480px) {
+        .mj-column-per-100 {
+          width: 100% !important;
+          max-width: 100%;
+        }
+      }
+    %style{:media => "screen and (min-width:480px)"}
+      :cdata
+        \.moz-text-html .mj-column-per-100 {
+        width: 100% !important;
+        max-width: 100%;
+        }
+    :css
+      @media only screen and (max-width:480px) {
+        table.mj-full-width-mobile {
+          width: 100% !important;
+        }
+
+        td.mj-full-width-mobile {
+          width: auto !important;
+        }
+      }
+  %body{:style => "word-spacing:normal;background-color:#ffffff;"}
+    %div{:style => "background-color:#ffffff;"}
+      /[if mso | IE] <table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" bgcolor="#ffffff" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      %div{:style => "background:#ffffff;background-color:#ffffff;margin:0px auto;max-width:600px;"}
+        %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :role => "presentation", :style => "background:#ffffff;background-color:#ffffff;width:100%;"}
+          %tbody
+            %tr
+              %td{:style => "direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0;text-align:center;"}
+                /[if mso | IE] <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:600px;" >
+                .mj-column-per-100.mj-outlook-group-fix{:style => "font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"}
+                  %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :role => "presentation", :style => "vertical-align:top;", :width => "100%"}
+                    %tbody
+                      %tr
+                        %td{:align => "center", :style => "font-size:0px;padding:10px 25px;padding-top:0;padding-right:0px;padding-bottom:0px;padding-left:0px;word-break:break-word;"}
+                          %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :role => "presentation", :style => "border-collapse:collapse;border-spacing:0px;"}
+                            %tbody
+                              %tr
+                                %td{:style => "width:600px;"}
+                                  %img{:alt => "", :height => "auto", :src => "http://go.mailjet.com/tplimg/mtrq/b/ox8s/mg1rw.png", :style => "border:none;display:block;outline:none;text-decoration:none;height:auto;width:100%;font-size:13px;", :width => "600"}/
+                /[if mso | IE] </td></tr></table>
+      /[if mso | IE] </td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" bgcolor="#bddcd2" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      %div{:style => "background:#bddcd2;background-color:#bddcd2;margin:0px auto;max-width:600px;"}
+        %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :role => "presentation", :style => "background:#bddcd2;background-color:#bddcd2;width:100%;"}
+          %tbody
+            %tr
+              %td{:style => "direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-top:0;text-align:center;"}
+                /[if mso | IE] <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:top;width:600px;" >
+                .mj-column-per-100.mj-outlook-group-fix{:style => "font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:top;width:100%;"}
+                  %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :role => "presentation", :style => "vertical-align:top;", :width => "100%"}
+                    %tbody
+                      %tr
+                        %td{:align => "left", :style => "font-size:0px;padding:10px 25px;padding-top:50px;padding-right:25px;padding-bottom:30px;padding-left:25px;word-break:break-word;"}
+                          %div{:style => "font-family:Lexend, open Sans Helvetica, Arial, sans-serif;font-size:45px;font-weight:bold;line-height:1;text-align:left;color:#000000000000;"} The party gathers
+                /[if mso | IE] </td></tr></table>
+      /[if mso | IE] </td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" bgcolor="#bddcd2" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
+      %div{:style => "background:#bddcd2;background-color:#bddcd2;margin:0px auto;max-width:600px;"}
+        %table{:align => "center", :border => "0", :cellpadding => "0", :cellspacing => "0", :role => "presentation", :style => "background:#bddcd2;background-color:#bddcd2;width:100%;"}
+          %tbody
+            %tr
+              %td{:style => "direction:ltr;font-size:0px;padding:20px 0;padding-bottom:20px;padding-top:20px;text-align:center;"}
+                /[if mso | IE] <table role="presentation" border="0" cellpadding="0" cellspacing="0"><tr><td class="" style="vertical-align:middle;width:600px;" >
+                .mj-column-per-100.mj-outlook-group-fix{:style => "font-size:0px;text-align:left;direction:ltr;display:inline-block;vertical-align:middle;width:100%;"}
+                  %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :role => "presentation", :style => "vertical-align:middle;", :width => "100%"}
+                    %tbody
+                      %tr
+                        %td{:align => "left", :style => "font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;"}
+                          %div{:style => "font-family:Lexend, open Sans Helvetica, Arial, sans-serif;font-size:22px;line-height:1;text-align:left;color:#000000000000;"}
+                            %span{:style => "color:#ff7777"}
+                              - friends = @event.voters.count
+                              = friends.humanize.titleize
+                              = "friend".pluralize(friends)
+                              joined
+                            %br/
+                            %br/
+                            = title @event.title
+                      %tr
+                        %td{:align => "center", :style => "font-size:0px;padding:10px 25px;word-break:break-word;"}
+                          %p{:style => "border-top:dashed 1px #ff7777;font-size:1px;margin:0px auto;width:100%;"}
+                          /[if mso | IE]
+                            <table align="center" border="0" cellpadding="0" cellspacing="0" style="border-top:dashed 1px #ff7777;font-size:1px;margin:0px auto;width:550px;" role="presentation" width="550px" ><tr><td style="height:0;line-height:0;"> &nbsp;
+                            </td></tr></table>
+                      %tr
+                        %td{:align => "left", :style => "font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;"}
+                          %div{:style => "font-family:Lexend, open Sans Helvetica, Arial, sans-serif;font-size:15px;line-height:1;text-align:left;color:#000000;"}
+                            These are the days everyone voted on.
+                      - days = @event.majority(@event.id)
+                      - if  days.empty? || days.nil?
+                      - else
+                        - days.each do | vote |
+                          - break unless vote[1] >= 2
+                          %tr
+                            %td{:align => "center", :style => "font-size:0px;padding:10px 25px;word-break:break-word;", "vertical-align" => "middle"}
+                              %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :role => "presentation", :style => "border-collapse:separate;line-height:100%;"}
+                                %tr
+                                  %td{:align => "center", :bgcolor => "#9dd4e1", :role => "presentation", :style => "border:none;border-radius:1px;cursor:auto;mso-padding-alt:10px 25px;background:#9dd4e1;", :valign => "middle"}
+                                    %p{:href => "", :style => "display:inline-block;background:#9dd4e1;color:#000000;font-family: Rubik, sans-serif;font-size:16px;font-weight:medium;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:1px;"}
+                                      = Date.parse(vote[0].to_s).strftime("%A %b, %d")
+                      %tr
+                        %td{:align => "left", :style => "font-size:0px;padding:10px 25px;padding-right:25px;padding-left:25px;word-break:break-word;"}
+                          %div{:style => "font-family:Lexend, open Sans Helvetica, Arial, sans-serif;font-size:15px;line-height:1;text-align:left;color:#000000;"}
+                            Adventure on,
+                            %br/
+                            whenarewefree.com
+                /[if mso | IE] </td></tr></table>
+      /[if mso | IE] </td></tr></table>
+
+
