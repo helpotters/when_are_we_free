@@ -39,7 +39,7 @@ RSpec.describe NotifyEmailJob do
       allow(VoterMailer).to receive(:send_confirmation_email_to).and_return(mailer)
       allow(mailer).to receive(:deliver_now!)
     end
-    context 'email full list of players' do
+    context 'when expected party-size has joined' do
       before do
         create(:event_with_minimum, id: 1000)
       end
