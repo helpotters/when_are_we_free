@@ -7,8 +7,8 @@ RSpec.feature 'Event Creation', type: :feature do
     find(:test_id, 'minimum_field').set(5)
   end
 
-  context 'when filling in with valid title and description week event' do
-    it 'creates an event successfully' do
+  context 'when selecting week' do
+    it 'create event successfully' do
       find(:test_id, 'title_field').fill_in(with: title)
       find(:test_id, 'description_field').fill_in(with: 'Description, hello')
       find(:test_id, 'week_event').click
@@ -17,7 +17,7 @@ RSpec.feature 'Event Creation', type: :feature do
     end
   end
 
-  context 'when filling in with valid title and description and selecting month event' do
+  context 'when selecting month' do
     it 'creates an event successfully' do
       find(:test_id, 'title_field').fill_in(with: title)
       find(:test_id, 'description_field').fill_in(with: 'A description beyond understanding')
@@ -27,7 +27,7 @@ RSpec.feature 'Event Creation', type: :feature do
     end
   end
 
-  context 'when filled in with empty description' do
+  context 'when created without a description' do
     it 'creates an event successfully' do
       find(:test_id, 'title_field').fill_in(with: title)
       find(:test_id, 'description_field').fill_in(with: '')
