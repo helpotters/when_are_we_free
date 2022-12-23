@@ -26,12 +26,14 @@
               %span.stat-figure.justify-center.flex-col.flex.items-center
                 .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.w-6.h-6{:class => "rounded-[360px] bg-[#f77]"}
                   .text-white.font-rubik= vote[1]
-  .card.bg-white.flex.flex-col
-    .card-body
-      .card-title
-        %p.font-inter.text-gray.text-md.font-regular.text-center
-          Tap the days you're free
-      = render "voters/form", local: {voter: @voter}
+
+  %turbo-frame#voters{ src: "/voters" }
+    .card.bg-white.flex.flex-col
+      .card-body
+        .card-title
+          %p.font-inter.text-gray.text-md.font-regular.text-center
+            Tap the days you're free
+        = render "voters/form", local: {voter: @voter}
   .card.bg-white.flex.flex-col.justify-center.gap-4.p-4
     - if @event.voters.empty?
       .card-title.justify-center
