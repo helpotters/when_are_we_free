@@ -1,0 +1,22 @@
+.card.bg-white.justify-center.items-center.p-5.w-full.gap-1.flex.flex-col
+  .card-body
+    .card-title
+      %p.text-md.font-lexend.font-bold.text-gray-400
+        You've been invited!
+    .flex.flex-col.justify-start.items-start.text-left.w-full.gap-1
+      %h1.text-2xl.font-lexend.font-bold.text-black.text-left{ data: {test_id: "event_title"} }
+        = title @event.title
+      %p.text-lg.font-inter.text-gray.font-regular{ data: {test_id: "event_description"} }
+        = description @event.description
+  .flex.flex-col.justify-center.items-start.gap-2
+    - days = @event.majority(@event.id)
+    - if  days.empty? || days.nil?
+    - else
+      - days.each do | vote |
+        - break unless vote[1] >= 2
+        .stats.w-auto.flex.flex-col
+          .stat.bg-gray-200.flex.flex-row.rounded-lg.p-4.w-80.align-center.items-center.justify-center
+            %span.stat-value.text-lg.font-rubik.text-black= Date.parse(vote[0].to_s).strftime("%A %b, %d")
+            %span.stat-figure.justify-center.flex-col.flex.items-center
+              .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.w-6.h-6{:class => "rounded-[360px] bg-[#f77]"}
+                .text-white.font-rubik= vote[1]
