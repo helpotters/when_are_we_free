@@ -1,0 +1,15 @@
+.my-1.flex.flex-col.justify-center.items-center.flex-grow.gap-1.px-4.rounded-lg.bg-white
+  = calendar(start_date: @event.start_date, number_of_days: @event.days.count) do |date|
+    .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.relative.p-1
+      %label.swap.swap-rotate.lg:p-2
+        / this hidden checkbox controls the state
+        = vote_form.check_box :_destroy, checked: true, data: { test_id: "calendar_day"}, id: date
+        .swap-on.justify-center.items-center.flex-grow-0.flex-shrink-0.relative
+          %span.font-rubik.text-primary-200.font-bold.text-right{:class => "w-[299px] h-[24.83px] text-[#537d6c]"}
+            = date.strftime("%d")
+        / checkmark icon
+        %svg.swap-off.stroke-green-300.w-10.h-10{:fill => "none", :stroke => "currentColor", "stroke-width" => "2", :viewbox => "0 0 24 24", :xmlns => "https://www.w3.org/2000/svg"}
+          %path{:d => "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", "stroke-linecap" => "round", "stroke-linejoin" => "round"}
+        = vote_form.hidden_field :day, value: date
+        = vote_form.hidden_field :voter_id, value: @voter.id
+        = vote_form.hidden_field :event_id, value: @event.id
