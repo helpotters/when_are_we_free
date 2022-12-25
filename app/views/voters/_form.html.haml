@@ -1,15 +1,15 @@
-= turbo_frame_tag @voter do
-  .card.bg-white.flex.flex-col
-    .card-body
-      .card-title
-        %p.font-inter.text-gray.text-md.font-regular.text-center
-          Tap the days you're free
-      = form_with model: @voter do | form |
-        = form.hidden_field :event_id, value: @event.id
-        = turbo_frame_tag @voter do
-          = form.fields_for "votes_attributes[]", Vote.new do |vote_form|
-            = render partial: "voters/votes", locals: { event: @event, form: form, vote_form: vote_form}
-            .mt-2.flex.flex-col.justify-center.items-center.gap-1.px-4.rounded-lg.bg-white
-              .form-control.flex-col.gap-2
-                = form.text_field :name, data: {test_id: "name" }, class: "input lg:input-lg input-ghost input-bordered input-md", placeholder: "Type name here..."
-                = form.button "Submit Your Availability", data: { test_id: "submit" }, class: "btn btn-primary"
+.card.bg-white.flex.flex-col
+  .card-body
+    .card-title
+      %p.font-inter.text-gray.text-md.font-regular.text-center
+        Tap the days you're free
+    = form_with model: @voter do | form |
+      = form.hidden_field :event_id, value: @event.id
+      = turbo_frame_tag @voter do
+        = form.fields_for "votes_attributes[]", Vote.new do |vote_form|
+          = render partial: "voters/votes", locals: { event: @event, form: form, vote_form: vote_form}
+          .mt-2.flex.flex-col.justify-center.items-center.gap-1.px-4.rounded-lg.bg-white
+            .form-control.flex-col.gap-2
+              = form.text_field :name, data: {test_id: "name" }, class: "input lg:input-lg input-ghost input-bordered input-md", placeholder: "Type name here..."
+              = form.button "Submit Your Availability", data: { test_id: "submit" }, class: "btn btn-primary"
+              = link_to "notify", notify_path(cookies[:voter_id]), data: { turbo_frame: "forms" }, class: "btn btn-primary"

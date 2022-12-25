@@ -1,5 +1,7 @@
 .max-h-screen.bg-primary.flex.flex-col.gap-4.px-2.lg:px-80.overflow-auto
   = render "steps"
   = render "event_info", local: { event: @event }
-  = render "voters/form", local: {voter: @voter}
+
+  %turbo-frame#forms
+    = render "voters/form", local: { voter: @voter }
   = render "friends_joined", local: { event: @event }
