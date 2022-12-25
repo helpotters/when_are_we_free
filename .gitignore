@@ -37,3 +37,4 @@
 /coverage
 /coverage/*
 rspec.xml
+app/assets/stylesheets/application.css
