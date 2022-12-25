@@ -1,20 +1,17 @@
 class VotersController < ApplicationController
   def new; end
 
+  def notify
+    @voter = Voter.find(params[:id])
+  end
+
   def create
     @event = Event.friendly.find(params[:voter][:event_id])
     @voter = @event.voters.build(voter_params)
 
-    respond_to do |format|
-      if @voter.save
-        cookies[:voter_id] = @voter.id
-        format.html { redirect_to "/notify/#{@event.id}", notice: 'successfuly shared availability' }
-        format.json { render json: @voter, status: :ok }
-      else
-        format.html { redirect_to event_path(@event) }
-        format.json { render json: @voter.errors, status: unprocessable_entity }
-      end
-    end
+    return unless @voter.save
+
+    cookies[:voter_id] = @voter.id
   end
 
   def update
