@@ -177,7 +177,6 @@ GEM
       net-imap
       net-pop
       net-smtp
-    mailtrap (1.1.1)
     marcel (1.0.2)
     matrix (0.4.2)
     meta-tags (2.18.0)
@@ -339,7 +338,6 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails (~> 1.0)
   letter_opener (~> 1.8)
-  mailtrap (~> 1.1)
   meta-tags (~> 2.16)
   pg (~> 1.1)
   puma (~> 5.0)

@@ -15,7 +15,7 @@
     = csp_meta_tag
     = display_meta_tags site: 'WhenAreWeFree?'
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
-    = javascript_importmap_tags
+    = javascript_include_tag "application", defer: true
   %body.max-h-screen.min-h-screen.bg-primary
     .py-2.bg-primary.flex.justify-center.items-center.self-stretch.flex-grow-0.flex-shrink-0.relative{:class => "gap-[87px] px-2.5"}
       %a.flex-grow-0.flex-shrink-0.text-2xl.text-left.font-bold.font-baloo.text-black.lg:text-3xl{:href => root_path } when are we free?

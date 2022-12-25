@@ -19,7 +19,7 @@
 
 "@hotwired/turbo-rails@^7.2.4":
   version "7.2.4"
-  resolved "https://registry.npmjs.org/@hotwired/turbo-rails/-/turbo-rails-7.2.4.tgz"
+  resolved "https://registry.yarnpkg.com/@hotwired/turbo-rails/-/turbo-rails-7.2.4.tgz#d155533e79c4ebdac23e8fe12697d821d5c06307"
   integrity sha512-givDUQqaccd19BvErz1Cf2j6MXF74m0G6I75oqFJGeXAa7vwkz9nDplefVNrALCR9Xi9j9gy32xmSI6wD0tZyA==
   dependencies:
     "@hotwired/turbo" "^7.2.4"
@@ -658,7 +658,7 @@ spark-md5@^3.0.1:
 
 stimulus@^3.2.1:
   version "3.2.1"
-  resolved "https://registry.npmjs.org/stimulus/-/stimulus-3.2.1.tgz"
+  resolved "https://registry.yarnpkg.com/stimulus/-/stimulus-3.2.1.tgz#bf049a4379ed4ff7475515acce1f0b6fa15a0187"
   integrity sha512-EhpuHnTwtkWrE5m7tQxLBLsi1aE6xJ/9MbB88aKXZSquIC4pCueKJ2AGaF5gq+/BzP7+xvYaVYA0j1dIUuBsgA==
   dependencies:
     "@hotwired/stimulus" "^3.2.1"
