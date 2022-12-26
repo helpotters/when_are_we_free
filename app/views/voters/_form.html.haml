@@ -1,4 +1,4 @@
-.card.bg-white.flex.flex-col
+.card.bg-white.flex.flex-col{ :data => {"controller": "forms"} }
   .card-body
     .card-title
       %p.font-inter.text-gray.text-md.font-regular.text-center
@@ -11,5 +11,4 @@
           .mt-2.flex.flex-col.justify-center.items-center.gap-1.px-4.rounded-lg.bg-white
             .form-control.flex-col.gap-2
               = form.text_field :name, data: {test_id: "name" }, class: "input lg:input-lg input-ghost input-bordered input-md", placeholder: "Type name here..."
-              = form.button "Submit Your Availability", data: { test_id: "submit" }, class: "btn btn-primary"
-              = link_to "notify", notify_path(cookies[:voter_id]), data: { turbo_frame: "forms" }, class: "btn btn-primary"
+              = form.button "Submit Your Availability", data: { test_id: "submit", action: "turbo:submit-end->forms#redirect"}, class: "btn btn-primary"
