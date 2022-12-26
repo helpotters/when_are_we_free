@@ -2,7 +2,7 @@ class Voter < ApplicationRecord
   after_create :check_if_minimum_met
   after_update :check_if_minimum_met
 
-  validates :name, presence: :true, uniqueness: { scope: :event_id }
+  validates :name, presence: true, uniqueness: { scope: :event_id, case_sensitive: false }
   validates_length_of :name, minimum: 1, message: 'is too short (minimum is 1 character)'
   validates_length_of :name, maximum: 26, message: 'is too long (maximum is 26 characters)'
 
