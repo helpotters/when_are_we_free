@@ -1,0 +1,5 @@
+- flash.each do |type, msg|
+  .alert.shadow-lg.rounded-box.fixed.right-5.top-5.items-center.flex{ :class => "alert-#{type}",
+         :data => { "controller": "flash" }}
+    %span
+      = msg

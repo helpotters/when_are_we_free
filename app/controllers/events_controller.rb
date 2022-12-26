@@ -10,8 +10,10 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event created!' }
+        flash[:success] = 'One step closer!'
+        format.html { redirect_to @event }
       else
+        flash[:error] = 'Something went wrong D:'
         format.html { render :new, status: :unprocessable_entity }
       end
     end

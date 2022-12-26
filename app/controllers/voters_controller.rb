@@ -12,9 +12,11 @@ class VotersController < ApplicationController
     respond_to do |format|
       if @voter.save
         cookies[:voter_id] = @voter.id
-        format.html { redirect_to notify_path(@voter), notice: 'successfully shared availability' }
+        flash[:success] = 'New party member added!'
+        format.html { redirect_to notify_path(@voter) }
         format.json { render json: @voter, status: :ok }
       else
+        flash[:error] = 'Something went wrong D:'
         format.html { redirect_to event_path(@event) }
         format.json { render json: @voter.errors, status: unprocessable_entity }
       end
@@ -30,7 +32,7 @@ class VotersController < ApplicationController
       redirect_to event_url(@event)
     else
       flash.now[:error] = 'Email failed'
-      redirect_to event_url(@event)
+      redirect_to notify_path(@voter)
     end
   end
 
