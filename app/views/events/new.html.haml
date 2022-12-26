@@ -1,5 +1,5 @@
 .min-h-screen.justify-start
-  = render "steps"
+  = render "steps", locals: { step: @step = 0}
   .hero.lg:p-20
     .hero-content.flex-col
       .flex.flex-col.lg:flex-row.justify-center.gap-4

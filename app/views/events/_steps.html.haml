@@ -1,5 +1,7 @@
-.text-center.py-4
-  %ul.steps
-    %li.text-white.font-bold.step.step-neutral Create Event
-    %li.text-white.font-bold.step.step-neutral Share Schedule
-    %li.text-white.font-bold.step Confirm
+.text-center.py-4{ :data => {"controller": "steps" }}
+  %ul#steps.steps{:data => { action: "turbo:load@document->steps#updateSteps",
+            "steps-target": "stepsList",
+            "steps-step-param": "#{@step}"} }
+    %li.text-white.font-bold.step Create Event
+    %li.text-white.font-bold.step Share Schedule
+    %li#last.text-white.font-bold.step Confirm

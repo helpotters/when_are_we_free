@@ -1,5 +1,5 @@
-.bg-primary.flex.flex-col.gap-4.px-2.lg:px-80.overflow-auto
-  = render "steps"
+.bg-primary.flex.flex-col.gap-4.px-2.lg:px-80.overflow-auto{ :data => {"controller": "steps" }}
+  = render "steps", locals: { step: @step = 1}
   = render "event_info", local: { event: @event }
 
   %turbo-frame#forms
