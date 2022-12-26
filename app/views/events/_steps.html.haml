@@ -1,7 +1,7 @@
-.text-center.py-4{ :data => {"controller": "steps" }}
+.text-center.py-2{ :data => {"controller": "steps" }}
   %ul#steps.steps{:data => { action: "turbo:load@document->steps#updateSteps",
             "steps-target": "stepsList",
             "steps-step-param": "#{@step}"} }
-    %li.text-white.font-bold.step Create Event
-    %li.text-white.font-bold.step Share Schedule
-    %li#last.text-white.font-bold.step Confirm
+    %li.text-white.font-bold.font-rubik.text-md.step Plan Event
+    %li.text-white.font-bold.font-rubik.text-md.step Tap Days
+    %li#last.text-white.font-bold.font-rubik.text-md.step Send Email
