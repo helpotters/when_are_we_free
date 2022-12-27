@@ -2,7 +2,7 @@ class VotersController < ApplicationController
   def new; end
 
   def notify
-    @voter = Voter.find(params[:id])
+    @voter = Voter.find(cookies[:voter_id])
   end
 
   def create
@@ -24,7 +24,7 @@ class VotersController < ApplicationController
   end
 
   def update
-    @voter = Voter.find(params[:id])
+    @voter = Voter.find(cookies[:voter_id])
     @event = Event.friendly.find(@voter.event_id)
 
     if @voter.update(voter_params)
