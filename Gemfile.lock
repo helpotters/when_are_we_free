@@ -68,6 +68,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    appsignal (3.2.2)
+      rack
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
@@ -317,6 +319,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  appsignal (~> 3.2)
   bootsnap
   bullet (~> 7.0)
   capybara (~> 3.36)
