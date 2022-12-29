@@ -13,9 +13,13 @@
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     = csrf_meta_tags
     = csp_meta_tag
+    - set_meta_tags description: "A free scheduling site for friends groups. Find everyone's availability with no login required."
     = display_meta_tags site: 'WhenAreWeFree?'
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_include_tag "application", defer: true
+    = favicon_link_tag ("favicon.ico")
+    %meta{:content => "#da532c", :name => "msapplication-TileColor"}/
+    %meta{:content => "#ffffff", :name => "theme-color"}/
   %body.max-h-screen.min-h-screen.bg-primary
     .navbar
       .flex-1
