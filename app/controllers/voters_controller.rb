@@ -7,7 +7,7 @@ class VotersController < ApplicationController
 
   def create
     @event = Event.friendly.find(params[:voter][:event_id])
-    @voter = @event.create(voter_params)
+    @voter = @event.voters.create(voter_params)
 
     respond_to do |format|
       if @voter.save
