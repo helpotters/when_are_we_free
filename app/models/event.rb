@@ -27,7 +27,7 @@ class Event < ApplicationRecord
 
   def majority(id)
     vote_query = Event.where(id:).joins(:votes).group('events.id').group('votes.day').count
-    sorted_days = vote_query.sort_by { |_date, count| count }.reverse.to_a
+    sorted_days = vote_query.sort.sort_by { |_date, count| count }.reverse.to_a
     begin
       max = sorted_days.first[1]
     rescue StandardError

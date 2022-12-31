@@ -14,8 +14,8 @@
     - else
       - days.each do | vote |
         - break unless vote[1] >= 2
-        .stats.w-auto.flex.flex-col
-          .stat.bg-gray-200.flex.flex-row.rounded-lg.p-4.w-80.align-center.items-center.justify-center
+        .stats.w-auto.flex.flex-col.justify-center
+          .stat.bg-gray-200.flex.flex-row.rounded-lg.p-4.w-80.align-center.items-center.justify-end
             %span.stat-value.text-lg.font-rubik.text-black= Date.parse(vote[0].to_s).strftime("%A %b, %d")
             %span.stat-figure.justify-center.flex-col.flex.items-center
               .flex.justify-center.items-center.flex-grow-0.flex-shrink-0.w-6.h-6{:class => "rounded-[360px] bg-[#f77]"}
