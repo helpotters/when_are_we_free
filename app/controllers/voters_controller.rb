@@ -29,7 +29,7 @@ class VotersController < ApplicationController
 
     if @voter.update(voter_params)
       flash[:success] = 'Email added'
-      redirect_to event_url(@event)
+      redirect_to next_path(@event)
     else
       flash.now[:error] = 'Email failed'
       redirect_to notify_path(@voter)
