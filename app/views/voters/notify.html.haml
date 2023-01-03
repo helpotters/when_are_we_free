@@ -1,4 +1,4 @@
-%turbo-frame#forms{ :data => {"controller": "steps" }}
+%turbo-frame#forms{ :data => {"controller": "steps forms links" }}
   .card.flex.flex-col.justify-center.items-center.bg-white.rounded-md.w-full.p-4{:data => { action: "turbo:frame-load@document->steps#updateLastStep"}}
     = form_with model: @voter, url: voter_url(@voter), method: :patch, local: true do | form |
       = render "shared/flash"
@@ -6,4 +6,4 @@
         .form-control.flex.flex-col.w-full.gap-1
           %label.text-2xl.font-inter.text-gray-400 Share your email...
           = form.text_field :email, data: {test_id: "email" }, class: "input lg:input-lg input-ghost input-bordered input-md", placeholder: "Type email here..."
-          = form.button "Submit Email", data: { test_id: "submit" }, class: "btn btn-primary"
+          = form.button "Submit Email", data: { test_id: "submit", action: "turbo:submit-end->forms#redirect"}, class: "btn btn-primary"

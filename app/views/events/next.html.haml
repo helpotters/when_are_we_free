@@ -1,0 +1,12 @@
+%turbo-frame#forms{ :data => {"controller": "steps forms links", "turbo-action": "advance", "target": "forms"}}
+  .card.flex.flex-col.justify-center.items-center.bg-white.rounded-md.w-full.p-4
+    .card-body
+      .card-title
+        %p.font-inter.text-gray.text-md.font-regular.text-center
+          Invite your friends
+      .card-content
+        %p.text-md.font-lexend.font-bold.text-gray-400
+          You'll be notified when everyone has joined.
+      .card-actions.justify-end.flex.flex-row.justify-start.items-start.text-left.w-full.gap-1
+        %button.btn.btn-full.btn-primary{ data: { action: "click->links#copy", "links-target": "button"}, value: "#{event_url(@event.friendly_id)}"}
+          Copy to Clipboard

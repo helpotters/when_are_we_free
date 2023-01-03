@@ -13,5 +13,8 @@ application.register("forms", FormsController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import LinksController from "./links_controller"
+application.register("links", LinksController)
+
 import StepsController from "./steps_controller"
 application.register("steps", StepsController)

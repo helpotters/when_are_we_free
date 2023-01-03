@@ -29,6 +29,10 @@ class EventsController < ApplicationController
     @voter = Voter.find(cookies[:voter_id])
   end
 
+  def next
+    @event = Event.friendly.find(params[:id])
+  end
+
   private
 
   def event_params

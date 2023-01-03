@@ -2,6 +2,6 @@
   = render "steps", locals: { step: @step = 1}
   = render "event_info", local: { event: @event }
 
-  %turbo-frame#forms{ :data => { "controller": "forms"} }
+  %turbo-frame#forms{ :data => { "controller": "forms steps links"} }
     = render "voters/form", local: { voter: @voter }
   = render "friends_joined", local: { event: @event }
