@@ -30,5 +30,10 @@ module.exports = {
                 './app/assets/stylesheets/**/*.css',
                 './app/javascript/**/*.js'
         ],
-        plugins: [require("daisyui")]
+        plugins: [
+                require("daisyui"),
+                require('postcss-import'),
+                require('tailwindcss'),
+                require('autoprefixer')
+        ],
 }

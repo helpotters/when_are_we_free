@@ -1,5 +1,5 @@
 - flash.each do |type, msg|
-  .alert.shadow-lg.rounded-box.fixed.left-2.top-32.items-center.flex-none.w-auto{ :class => "alert-#{type}",
+  .alert.shadow-lg.relative.rounded-box.justify-center.align-center.flex-row.md:flex-row.md:w-60{ :class => "alert-#{type}",
          :data => { "controller": "flash" }}
     - if type == "success"
       %svg.stroke-current.flex-shrink-0.h-6.w-6{:fill => "none", :viewbox => "0 0 24 24", :xmlns => "http://www.w3.org/2000/svg"}

@@ -21,6 +21,8 @@
     %meta{:content => "#da532c", :name => "msapplication-TileColor"}/
     %meta{:content => "#ffffff", :name => "theme-color"}/
   %body.max-h-screen.min-h-screen.bg-primary
+    %turbo-frame#flash.fixed.top-0.left-0.right-0.w-full.md:w-60
+      = render "shared/flash"
     .navbar
       .flex-1
         %a.font-baloo.font-bold.text-xl.btn.btn-ghost.lowercase{ :href => root_path }
@@ -33,6 +35,4 @@
           %li
             %a.font-rubik.font-medium.text-white{ :href => new_event_path}
               Schedule something
-    %turbo-frame#flash
-      = render "shared/flash"
     = yield
