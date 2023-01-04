@@ -1,7 +1,6 @@
 %turbo-frame#forms{ :data => {"controller": "steps forms links" }}
   .card.flex.flex-col.justify-center.items-center.bg-white.rounded-md.w-full.p-4{:data => { action: "turbo:frame-load@document->steps#updateLastStep"}}
     = form_with model: @voter, url: voter_url(@voter), method: :patch, local: true do | form |
-      = render "shared/flash"
       .card-body.gap-4
         .form-control.flex.flex-col.w-full.gap-1
           %label.text-2xl.font-inter.text-gray-400 Share your email...

@@ -12,11 +12,13 @@ class VotersController < ApplicationController
     respond_to do |format|
       if @voter.save
         cookies[:voter_id] = @voter.id
-        flash[:success] = 'New party member added!'
+        flash.now[:success] = 'New party member added!'
+        format.turbo_stream { render_flash }
         format.html { redirect_to notify_path(@voter) }
         format.json { render json: @voter, status: :ok }
       else
-        flash[:error] = 'Something went wrong D:'
+        flash.now[:error] = 'Something went wrong! D: '
+        format.turbo_stream { render_flash }
         format.html { redirect_to event_path(@event) }
         format.json { render json: @voter.errors, status: unprocessable_entity }
       end
@@ -29,9 +31,11 @@ class VotersController < ApplicationController
 
     if @voter.update(voter_params)
       flash[:success] = 'Email added'
+      format.turbo_stream { render_flash }
       redirect_to next_path(@event)
     else
-      flash.now[:error] = 'Email failed'
+      flash[:error] = 'Email failed'
+      format.turbo_stream { render_flash }
       redirect_to notify_path(@voter)
     end
   end

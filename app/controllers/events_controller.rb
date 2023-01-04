@@ -13,8 +13,9 @@ class EventsController < ApplicationController
         flash[:success] = 'One step closer!'
         format.html { redirect_to @event }
       else
-        flash[:error] = 'Something went wrong D:'
+        flash.now[:error] = 'Something went wrong D:'
         format.html { render :new, status: :unprocessable_entity }
+        format.turbo_stream { render_flash }
       end
     end
   end
