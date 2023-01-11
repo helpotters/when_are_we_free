@@ -29,14 +29,16 @@ class VotersController < ApplicationController
     @voter = Voter.find(cookies[:voter_id])
     @event = Event.friendly.find(@voter.event_id)
 
-    if @voter.update(voter_params)
-      flash[:success] = 'Email added'
-      format.turbo_stream { render_flash }
-      redirect_to next_path(@event)
-    else
-      flash[:error] = 'Email failed'
-      format.turbo_stream { render_flash }
-      redirect_to notify_path(@voter)
+    respond_to do |format|
+      if @voter.update(voter_params)
+        flash[:success] = 'Email added'
+        format.turbo_stream { render_flash }
+        format.html { redirect_to next_path(@event) }
+      else
+        flash[:error] = 'Email failed'
+        format.turbo_stream { render_flash }
+        format.html { redirect_to notify_path(@voter) }
+      end
     end
   end
 
