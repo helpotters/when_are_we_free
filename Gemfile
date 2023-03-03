@@ -26,7 +26,7 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
-gem "redis", "~> 4.0"
+gem 'redis', '~> 4.0'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -104,5 +104,3 @@ gem 'jsbundling-rails', '~> 1.0'
 gem 'letter_opener', '~> 1.8', groups: %i[development test]
 
 gem 'show_me_the_cookies', '~> 6.0', group: %i[test development]
-
-gem "appsignal", "~> 3.2"
