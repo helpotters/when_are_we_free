@@ -32,7 +32,6 @@ class VotersController < ApplicationController
     respond_to do |format|
       if @voter.update(voter_params)
         flash[:success] = 'Email added'
-        format.turbo_stream { render_flash }
         format.html { redirect_to next_path(@event) }
       else
         flash[:error] = 'Email failed'

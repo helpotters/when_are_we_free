@@ -5,6 +5,7 @@ export default class extends Controller {
   static targets = ["stepsList"]
 
   connect() {
+    console.log("Steps connected")
     document.addEventListener("turbo:before-visit", (event) => {
     })
   }

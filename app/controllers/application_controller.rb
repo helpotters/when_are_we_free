@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
     turbo_stream_update('friends', action: 'prepend', partial: 'events/friends_joined')
     turbo_stream_update('flash', partial: 'shared/flash')
     turbo_stream_update('votes', partial: 'events/event_info')
+    turbo_stream_update('forms', partial: 'voters/notify')
     render turbo_stream: actions
   end
 
