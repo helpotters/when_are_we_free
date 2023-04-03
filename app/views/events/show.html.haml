@@ -1,7 +1,9 @@
 .bg-primary.flex.flex-col.gap-4.px-2.lg:px-80.overflow-auto{ :data => {"controller": "steps" }}
   = render "steps", locals: { step: @step = 1}
-  = render "event_info", local: { event: @event }
+  %turbo-frame#votes
+    = render "event_info", local: { event: @event }
 
   %turbo-frame#forms{ :data => { "controller": "forms steps links"} }
     = render "voters/form", local: { voter: @voter }
-  = render "friends_joined", local: { event: @event }
+  %turbo-frame#friends
+    = render "friends_joined", local: { event: @event }

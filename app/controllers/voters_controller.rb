@@ -13,7 +13,7 @@ class VotersController < ApplicationController
       if @voter.save
         cookies[:voter_id] = @voter.id
         flash.now[:success] = 'New party member added!'
-        format.turbo_stream { render_flash }
+        format.turbo_stream { update_friends }
         format.html { redirect_to notify_path(@voter) }
         format.json { render json: @voter, status: :ok }
       else
