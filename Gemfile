@@ -106,3 +106,5 @@ gem 'letter_opener', '~> 1.8', groups: %i[development test]
 gem 'show_me_the_cookies', '~> 6.0', group: %i[test development]
 
 gem 'solargraph', '~> 0.48.0', group: %(development)
+
+gem "phlex", "~> 1.2"
